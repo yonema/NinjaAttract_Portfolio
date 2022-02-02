@@ -9,6 +9,14 @@
     --kTitleImageHeight: 432px;
 }
 
+body
+{
+    background-image: url(images/background.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
 /* タイトル画像のスタイル */
 img[src*="#titleImage"]
 { 
