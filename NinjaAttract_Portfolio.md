@@ -1,3 +1,5 @@
+<link href="stylesheet.css" rel="stylesheet"></link>
+
 # **「Ninja Attract」ポートフォリオ**<!-- omit in toc -->
 ## 河原電子ビジネス専門学校　ゲームクリエイター科2年
 ## 氏名：米地 真央

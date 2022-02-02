@@ -2,11 +2,11 @@
 {
     /* 
     タイトル画像のサイズ
-    1980 * 0.3 = 594
-    1080 * 0.3 = 324
+    1980 * 0.4 = 792
+    1080 * 0.4 = 432
      */
-    --kTitleImageWidth: 594px;
-    --kTitleImageHeight: 324px;
+    --kTitleImageWidth: 792px;
+    --kTitleImageHeight: 432px;
 }
 
 /* タイトル画像のスタイル */
