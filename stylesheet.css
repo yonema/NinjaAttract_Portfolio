@@ -7,6 +7,14 @@
      */
     --kTitleImageWidth: 792px;
     --kTitleImageHeight: 432px;
+
+    /* 
+    タイトル画像のサイズ
+    1980 * 0.3 = 594
+    1080 * 0.3 = 324
+     */
+     --kNormalImageWidth: 594px;
+     --kNormalImageHeight: 324px;
 }
 
 body
@@ -25,6 +33,13 @@ img[src*="#titleImage"]
 { 
     width: var(--kTitleImageWidth);
     height: var(--kTitleImageHeight);
+}
+
+/* 通常の画像のスタイル */
+img[src*="#normaImage"]
+{ 
+    width: var(--kNormalImageWidth);
+    height: var(--kNormalImageHeight);
 }
 
 /* 「目次へ」のスタイル */

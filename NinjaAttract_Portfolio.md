@@ -348,7 +348,13 @@
 ***
 
 # 4.ゲーム内容
-&emsp;hogehoge
+&emsp;街中を自由にスイングで飛び回れる、3Dスイングアクションゲーム。<br>
+危険走行をする暴走車を、スイングで追いかけて捕まえろ！
+
+<br><!-- ゲームのイメージ画像 -->
+![gameImage](images/gameImage.jpg#normaImage)
+<br>
+
 
 <!-- 目次へのリンク_ここから -->
 <section class = "goToIndexText">
