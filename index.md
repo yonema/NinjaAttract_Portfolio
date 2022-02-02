@@ -7,5 +7,5 @@
 1080 * 0.25 = 270
 -->
 <br>
-<img src = "images/title.jpg" ald = "タイトル" width = "495" height = "270">
+<img src = "images/title.jpg" ald = "タイトル" class = "titleImage">
 <br>

@@ -1,0 +1,12 @@
+:root
+{
+    --kTitleImageWidth: 990px;
+    --kTitleImageHeight: 540px;
+}
+
+
+.titleImage
+{
+    width: var(--kTitleImageWidth);
+    height: var(--kTitleImageHeight);
+}
