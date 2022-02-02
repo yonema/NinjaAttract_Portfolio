@@ -1,12 +1,41 @@
 :root
 {
-    --kTitleImageWidth: 990px;
-    --kTitleImageHeight: 540px;
+    /* 
+    タイトル画像のサイズ
+    1980 * 0.3 = 594
+    1080 * 0.3 = 324
+     */
+    --kTitleImageWidth: 594px;
+    --kTitleImageHeight: 324px;
+}
+
+/* タイトル画像のスタイル */
+img[src*="#titleImage"]
+{ 
+    width: var(--kTitleImageWidth);
+    height: var(--kTitleImageHeight);
+}
+
+/* 「目次へ」のスタイル */
+.goToIndexText
+{
+    text-align: right;
 }
 
 
-.titleImage
+/* <チートシート>
+------------------------------------------------------------------------ */
+.right
 {
-    width: var(--kTitleImageWidth);
-    height: var(--kTitleImageHeight);
+    text-align: right;
+}
+
+.bold
+{
+    font-weight: bold;
+}
+
+.border
+{
+    border: 3px solid #ddd;
 }
