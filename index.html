@@ -383,10 +383,10 @@ code {
 <li><a href="#5%E6%93%8D%E4%BD%9C%E8%AA%AC%E6%98%8E">5.操作説明</a></li>
 <li><a href="#6%E5%9B%B0%E9%9B%A3%E3%81%A0%E3%81%A3%E3%81%9F%E7%82%B9%E3%81%A8%E8%A7%A3%E6%B1%BA%E6%96%B9%E6%B3%95">6.困難だった点と解決方法</a>
 <ul>
-<li><a href="#61%E3%82%AA%E3%83%96%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88%E3%81%AE%E5%A4%A7%E9%87%8F%E8%A1%A8%E7%A4%BA">6.1.オブジェクトの大量表示</a></li>
-<li><a href="#62%E5%BA%83%E7%AF%84%E5%9B%B2%E3%83%9E%E3%83%83%E3%83%97%E3%81%A7%E3%81%AE%E5%BD%B1%E3%81%AE%E5%95%8F%E9%A1%8C">6.2.広範囲マップでの影の問題</a></li>
-<li><a href="#63vsm%E3%81%AE%E6%B3%A8%E6%84%8F%E7%82%B9">6.3.VSMの注意点</a></li>
-<li><a href="#64d3d12%E3%81%AE%E3%82%A8%E3%83%A9%E3%83%BC%E8%AD%A6%E5%91%8A%E3%81%AE%E5%9B%9E%E9%81%BF">6.4.D3D12のエラー、警告の回避</a></li>
+<li><a href="#61%E5%BA%83%E7%AF%84%E5%9B%B2%E3%83%9E%E3%83%83%E3%83%97%E3%81%A7%E3%81%AE%E5%BD%B1%E3%81%AE%E5%95%8F%E9%A1%8C">6.1.広範囲マップでの影の問題</a></li>
+<li><a href="#62vsm%E3%81%AE%E6%B3%A8%E6%84%8F%E7%82%B9">6.2.VSMの注意点</a></li>
+<li><a href="#63d3d12%E3%81%AE%E3%82%A8%E3%83%A9%E3%83%BC%E8%AD%A6%E5%91%8A%E3%81%AE%E5%9B%9E%E9%81%BF">6.3.D3D12のエラー、警告の回避</a></li>
+<li><a href="#64vroid%E3%81%8B%E3%82%89%E8%87%AA%E4%BD%9C%E3%82%B2%E3%83%BC%E3%83%A0%E3%81%A7%E8%A1%A8%E7%A4%BA%E3%81%A7%E3%81%8D%E3%82%8B%E3%83%A2%E3%83%87%E3%83%AB%E3%83%87%E3%83%BC%E3%82%BF%E3%81%B8%E3%81%AE%E5%A4%89%E6%8F%9B">6.4.VRoidから自作ゲームで表示できるモデルデータへの変換</a></li>
 </ul>
 </li>
 <li><a href="#7%E6%8A%80%E8%A1%93%E7%B4%B9%E4%BB%8B">7.技術紹介</a>
@@ -398,7 +398,8 @@ code {
 <li><a href="#75%E3%82%A4%E3%83%B3%E3%82%B9%E3%82%BF%E3%83%B3%E3%82%B7%E3%83%B3%E3%82%B0%E6%8F%8F%E7%94%BB">7.5.インスタンシング描画</a></li>
 <li><a href="#76%E3%83%95%E3%83%A9%E3%82%B9%E3%82%BF%E3%83%A0%E3%82%AB%E3%83%AA%E3%83%B3%E3%82%B0">7.6.フラスタムカリング</a></li>
 <li><a href="#77lod">7.7.LOD</a></li>
-<li><a href="#78%E3%83%99%E3%82%B8%E3%82%A7%E6%9B%B2%E7%B7%9A">7.8.ベジェ曲線</a></li>
+<li><a href="#78flyweight%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B3">7.8.FlyWeightパターン</a></li>
+<li><a href="#79%E3%83%99%E3%82%B8%E3%82%A7%E6%9B%B2%E7%B7%9A">7.9.ベジェ曲線</a></li>
 </ul>
 </li>
 <li><a href="#8%E3%82%B2%E3%83%BC%E3%83%A0%E7%9A%84%E3%81%AB%E3%81%93%E3%81%A0%E3%82%8F%E3%81%A3%E3%81%9F%E3%81%A8%E3%81%93%E3%82%8D">8.ゲーム的にこだわったところ</a>
@@ -906,17 +907,7 @@ code {
 <!-- 目次へのリンク_ここまで -->
 <hr>
 <h1 id="6%E5%9B%B0%E9%9B%A3%E3%81%A0%E3%81%A3%E3%81%9F%E7%82%B9%E3%81%A8%E8%A7%A3%E6%B1%BA%E6%96%B9%E6%B3%95">6.困難だった点と解決方法</h1>
-<h2 id="61%E3%82%AA%E3%83%96%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88%E3%81%AE%E5%A4%A7%E9%87%8F%E8%A1%A8%E7%A4%BA">6.1.オブジェクトの大量表示</h2>
-<ol>
-<li>Flywightパターンを使用したリソースバンクによる使用メモリの削減</li>
-<li>ディファードレンダリング、インスタンシング描画、フラスタムカリング、LODによる処理負荷の軽減</li>
-</ol>
-<!-- 目次へのリンク_ここから -->
-<section class = "goToIndexText">
-<p><a href="#%E7%9B%AE%E6%AC%A1">目次へ</a></p>
-</section>
-<!-- 目次へのリンク_ここまで -->
-<h2 id="62%E5%BA%83%E7%AF%84%E5%9B%B2%E3%83%9E%E3%83%83%E3%83%97%E3%81%A7%E3%81%AE%E5%BD%B1%E3%81%AE%E5%95%8F%E9%A1%8C">6.2.広範囲マップでの影の問題</h2>
+<h2 id="61%E5%BA%83%E7%AF%84%E5%9B%B2%E3%83%9E%E3%83%83%E3%83%97%E3%81%A7%E3%81%AE%E5%BD%B1%E3%81%AE%E5%95%8F%E9%A1%8C">6.1.広範囲マップでの影の問題</h2>
 <ol>
 <li>影のちらつきの軽減</li>
 <li>遠景の影まで描画した時、プレイヤーの影の劣化の防止</li>
@@ -926,7 +917,7 @@ code {
 <p><a href="#%E7%9B%AE%E6%AC%A1">目次へ</a></p>
 </section>
 <!-- 目次へのリンク_ここまで -->
-<h2 id="63vsm%E3%81%AE%E6%B3%A8%E6%84%8F%E7%82%B9">6.3.VSMの注意点</h2>
+<h2 id="62vsm%E3%81%AE%E6%B3%A8%E6%84%8F%E7%82%B9">6.2.VSMの注意点</h2>
 <ol>
 <li>分散が少ない影が薄くなる</li>
 <li>地面のモデルもシャドウマップに書き込む必要がある</li>
@@ -936,11 +927,21 @@ code {
 <p><a href="#%E7%9B%AE%E6%AC%A1">目次へ</a></p>
 </section>
 <!-- 目次へのリンク_ここまで -->
-<h2 id="64d3d12%E3%81%AE%E3%82%A8%E3%83%A9%E3%83%BC%E8%AD%A6%E5%91%8A%E3%81%AE%E5%9B%9E%E9%81%BF">6.4.D3D12のエラー、警告の回避</h2>
+<h2 id="63d3d12%E3%81%AE%E3%82%A8%E3%83%A9%E3%83%BC%E8%AD%A6%E5%91%8A%E3%81%AE%E5%9B%9E%E9%81%BF">6.3.D3D12のエラー、警告の回避</h2>
 <ol>
 <li>STATE_CREATION WARNING #0: UNKNOWN</li>
 <li>EXECUTION ERROR #613: RENDER_TARGET_FORMAT_MISMATCH_PIPELINE_STATE</li>
 <li>EXECUTION ERROR #538: INVALID_SUBRESOURCE_STATE</li>
+</ol>
+<!-- 目次へのリンク_ここから -->
+<section class = "goToIndexText">
+<p><a href="#%E7%9B%AE%E6%AC%A1">目次へ</a></p>
+</section>
+<!-- 目次へのリンク_ここまで -->
+<h2 id="64vroid%E3%81%8B%E3%82%89%E8%87%AA%E4%BD%9C%E3%82%B2%E3%83%BC%E3%83%A0%E3%81%A7%E8%A1%A8%E7%A4%BA%E3%81%A7%E3%81%8D%E3%82%8B%E3%83%A2%E3%83%87%E3%83%AB%E3%83%87%E3%83%BC%E3%82%BF%E3%81%B8%E3%81%AE%E5%A4%89%E6%8F%9B">6.4.VRoidから自作ゲームで表示できるモデルデータへの変換</h2>
+<ol>
+<li>UniVRMパッケージを使いVroidからUnityへ（テクスチャのカラーが変）</li>
+<li>Windows10標準搭載の3D Builderを使いobjに変換（UVが変）</li>
 </ol>
 <!-- 目次へのリンク_ここから -->
 <section class = "goToIndexText">
@@ -998,7 +999,33 @@ code {
 <p><a href="#%E7%9B%AE%E6%AC%A1">目次へ</a></p>
 </section>
 <!-- 目次へのリンク_ここまで -->
-<h2 id="78%E3%83%99%E3%82%B8%E3%82%A7%E6%9B%B2%E7%B7%9A">7.8.ベジェ曲線</h2>
+<h2 id="78flyweight%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B3">7.8.FlyWeightパターン</h2>
+<p> 大量にあるビルや街路樹は、同じモデルやテクスチャを使用しているものが沢山ある。街路樹は全て同じモデルが使用されている。ビルのモデルは29あるが、違うモデルでも同じテクスチャを使用しているところが何か所もある。このような場合では、FlyWeightパターンを使用すれば、大幅にメモリ使用量を節約することができる。</p>
+<p>▽同じモデルを使用しているの街路樹
+<br><!-- リソースバンクの説明の画像 -->
+<img src="images/ResourceBank1.jpg#titleImage" alt="ResourceBank">
+<br></p>
+<p>▽同じテクスチャを使用しているビル
+<br><!-- リソースバンクの説明の画像 -->
+<img src="images/ResourceBank2.jpg#titleImage" alt="ResourceBank">
+<br></p>
+<p>普通に読み込むと、同じモデルやテクスチャを使用していても、使用する分だけオブジェクトの生成を行うことになる。その時の使用メモリ量は、オブジェクつに   必要のメモリ量×オブジェクトの数になってしまう。<br>
+だが、FlyWightパターンを使用した場合、最初に生成するときにリソースバンクにリソースを登録する。2回目以降は、リソースバンクからリソースの参照をため   新たに生成する必要がなくなる。そのため、使用メモリ量は、オブジェクト1つに必要なメモリ量だけになる。<br>
+これにより、当初は20GB以上のメモリを使用していたステージが、約5GBのメモリ使用量で生成することが出来た。</p>
+<p>▽FlyWightパターン無しの場合
+<br><!-- リソースバンクの説明の画 -->
+<img src="images/ResourceBank3.jpg#titleImage" alt="ResourceBank">
+<br></p>
+<p>▽FlyWightパターン有りの場合
+<br><!-- リソースバンクの説明の画 -->
+<img src="images/ResourceBank4.jpg#titleImage" alt="ResourceBank">
+<br></p>
+<!-- 目次へのリンク_ここから -->
+<section class = "goToIndexText">
+<p><a href="#%E7%9B%AE%E6%AC%A1">目次へ</a></p>
+</section>
+<!-- 目次へのリンク_ここまで -->
+<h2 id="79%E3%83%99%E3%82%B8%E3%82%A7%E6%9B%B2%E7%B7%9A">7.9.ベジェ曲線</h2>
 <p> hogehoge</p>
 <!-- 目次へのリンク_ここから -->
 <section class = "goToIndexText">
