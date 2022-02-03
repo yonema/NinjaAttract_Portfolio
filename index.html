@@ -225,7 +225,7 @@ pre code {
 }
 
 </style>
-
+<link rel="stylesheet" href="file:///d%3A/Github/portfolio/NinjaAttract_Portfolio/stylesheet.css" type="text/css">
 <style>
 /* Tomorrow Theme */
 /* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
@@ -370,7 +370,7 @@ code {
 <h2 id="%E6%B2%B3%E5%8E%9F%E9%9B%BB%E5%AD%90%E3%83%93%E3%82%B8%E3%83%8D%E3%82%B9%E5%B0%82%E9%96%80%E5%AD%A6%E6%A0%A1-%E3%82%B2%E3%83%BC%E3%83%A0%E3%82%AF%E3%83%AA%E3%82%A8%E3%82%A4%E3%82%BF%E3%83%BC%E7%A7%912%E5%B9%B4">河原電子ビジネス専門学校　ゲームクリエイター科2年</h2>
 <h2 id="%E6%B0%8F%E5%90%8D%E7%B1%B3%E5%9C%B0-%E7%9C%9F%E5%A4%AE">氏名：米地 真央</h2>
 <p><br><!-- タイトル画像 -->
-<img src="images/title.jpg#titleImage" alt="title">
+<img src = images/title.jpg class = titleImage>
 <br></p>
 <hr>
 <h1 id="%E7%9B%AE%E6%AC%A1">目次</h1>
@@ -873,7 +873,7 @@ code {
 <p> 街中を自由にスイングで飛び回れる、3Dスイングアクションゲーム。<br>
 危険走行をする暴走車を、スイングで追いかけて捕まえろ！</p>
 <p><br><!-- ゲームのイメージ画像 -->
-<img src="images/gameImage.jpg#normaImage" alt="gameImage">
+<img src = images/gameImage.jpg class = normalImage>
 <br></p>
 <!-- 目次へのリンク_ここから -->
 <section class = "goToIndexText">
@@ -892,7 +892,7 @@ code {
 <li>STARTボタン：ミッション確認</li>
 </ul>
 <p><br><!-- 操作説明の画像 -->
-<img src="images/Instructions.jpg#normaImage" alt="gameImage">
+<img src = images/Instructions.jpg class = normalImage>
 <br></p>
 <!-- 目次へのリンク_ここから -->
 <section class = "goToIndexText">
@@ -935,7 +935,7 @@ code {
 <li>
 <p>このAABBの側面にスイングターゲットを等間隔で配置する。この時、一定以下の高さはスイング出来ないので、除外する。</p>
 <p><br><!-- スイングの画像 -->
-<img src="images/swing1.jpg#normaImage" alt="swingImage">
+<img src = images/swing1.jpg class = normalImage>
 <br></p>
 </li>
 </ol>
@@ -950,7 +950,7 @@ code {
 <p>プレイヤーの座標から、スイングで進む方向に一定距離先の座標を基点に、有効範囲内にあって一番近いスイングターゲットを探し出す。この時、進む方向ベクトルと、プレイヤー座標からスイングターゲットへの方向ベクトルの内積が負になるスイングターゲットは候補から除外する。つまり、進む方向と逆方向のスイングターゲットは選ばないようにする。</p>
 <p>▽上から見たスイングターゲットを探す処理
 <br><!-- スイングの画像 -->
-<img src="images/swing2.jpg#normaImage" alt="swingImage">
+<img src = images/swing2.jpg class = normalImage>
 <br></p>
 </li>
 </ol>
@@ -970,7 +970,7 @@ code {
 <li>
 <p>鎖がスイングターゲットまで伸びきったら、スイングを開始する。</p>
 <p><br><!-- スイングの画像 -->
-<img src="images/swing3.jpg#normaImage" alt="swingImage">
+<img src = images/swing3.jpg class = normalImage>
 <br></p>
 </li>
 </ol>
@@ -987,13 +987,13 @@ code {
 <li>
 <p>次に、「鎖が射出するスイングターゲットを探す」ときに求めたスイングで進む方向、これを<strong>XZ平面での前方向ベクトル</strong>とする。</p>
 <p><br><!-- スイングの画像 -->
-<img src="images/swing4.jpg#normaImage" alt="swingImage">
+<img src = images/swing4.jpg class = normalImage>
 <br></p>
 </li>
 <li>
 <p><strong>XZ平面での前方向ベクトル</strong>に内積を使って<strong>XZ平面でのプレイヤーからスイングターゲットへのベクトル</strong>を射影する。</p>
 <p><br><!-- スイングの画像 -->
-<img src="images/swing5.jpg#normaImage" alt="swingImage">
+<img src = images/swing5.jpg class = normalImage>
 <br></p>
 </li>
 <li>
@@ -1002,13 +1002,13 @@ code {
 <li>
 <p>プレイヤーの座標に 5. で求めたベクトルを加算すると<strong>XZ平面でのスイングターゲットをプレイヤーの前方向に直交するように移動させた座標</strong>が求まる。</p>
 <p><br><!-- スイングの画像 -->
-<img src="images/swing6.jpg#normaImage" alt="swingImage">
+<img src = images/swing6.jpg class = normalImage>
 <br></p>
 </li>
 <li>
 <p>6.の座標のY座標をスイングターゲットのY座標と同じにする。これでスイングターゲットをプレイヤーの前方向までずらした座標が求まる。この座標を振り子の支点に見立てて移動させる。プレイヤーの前方向にずらしたため、真っ直ぐ前に振り子運動をする。本来ならそのままのスイングターゲットの座標を支点とするのが正しいが、プレイヤーの操作性やスイングの爽快感を出すために、プレイヤーの前方向までずらしている。</p>
 <p><br><!-- スイングの画像 -->
-<img src="images/swing7.jpg#normaImage" alt="swingImage">
+<img src = images/swing7.jpg class = normalImage>
 <br></p>
 </li>
 <li>
@@ -1017,13 +1017,13 @@ code {
 <li>
 <p>内積が負なら、プレイヤーはスイングターゲットより手前におり、正ならスイングターゲットより奥にいる。手前の時と奥の時で処理を変える。</p>
 <p><br><!-- スイングの画像 -->
-<img src="images/swing8.jpg#normaImage" alt="swingImage">
+<img src = images/swing9.jpg class = normalImage>
 <br></p>
 </li>
 <li>
 <p>手前にいるときの処理は、<strong>XZ平面での前方向ベクトル</strong>を下に回転させる。下向きに回転させるために回転軸を求める。<strong>上方向のベクトル</strong>と<strong>XZ平面での前方向ベクトル</strong>の外積を求め、上下の回転に必要な<strong>横方向ベクトル</strong>が求まる。
 <br><!-- スイングの画像 -->
-<img src="images/swing9.jpg#normaImage" alt="swingImage">
+<img src = images/swing9.jpg class = normalImage>
 <br></p>
 </li>
 <li>
@@ -1035,13 +1035,13 @@ code {
 <li>
 <p><strong>XZ平面での前方向ベクトル</strong>を10.で求めた<strong>横方向ベクトル</strong>を軸中心に、12.で求めた回転量だけ回転させ、上下の角度を決める。
 <br><!-- スイングの画像 -->
-<img src="images/swing10.jpg#normaImage" alt="swingImage">
+<img src = images/swing10.jpg class = normalImage>
 <br></p>
 </li>
 <li>
 <p>9.の時に内積が正のとき処理は<strong>前方向にずらしたスイングターゲットからプレイヤーへの方向ベクトル</strong>を<strong>横方向ベクトル</strong>で90度回転させたベクトルの方向に進む。
 <br><!-- スイングの画像 -->
-<img src="images/swing11.jpg#normaImage" alt="swingImage">
+<img src = images/swing11.jpg class = normalImage>
 <br></p>
 </li>
 </ol>
@@ -1146,22 +1146,22 @@ $</p>
 <p> 大量にあるビルや街路樹は、同じモデルやテクスチャを使用しているものが沢山ある。街路樹は全て同じモデルが使用されている。ビルのモデルは29あるが、違うモデルでも同じテクスチャを使用しているところが何か所もある。このような場合では、FlyWeightパターンを使用すれば、大幅にメモリ使用量を節約することができる。</p>
 <p>▽同じモデルを使用しているの街路樹
 <br><!-- リソースバンクの説明の画像 -->
-<img src="images/ResourceBank1.jpg#titleImage" alt="ResourceBank">
+<img src = images/ResourceBank1.jpg class = normalImage>
 <br></p>
 <p>▽同じテクスチャを使用しているビル
 <br><!-- リソースバンクの説明の画像 -->
-<img src="images/ResourceBank2.jpg#titleImage" alt="ResourceBank">
+<img src = images/ResourceBank2.jpg class = normalImage>
 <br></p>
 <p>普通に読み込むと、同じモデルやテクスチャを使用していても、使用する分だけオブジェクトの生成を行うことになる。その時の使用メモリ量は、オブジェクつに   必要のメモリ量×オブジェクトの数になってしまう。<br>
 だが、FlyWightパターンを使用した場合、最初に生成するときにリソースバンクにリソースを登録する。2回目以降は、リソースバンクからリソースの参照をため   新たに生成する必要がなくなる。そのため、使用メモリ量は、オブジェクト1つに必要なメモリ量だけになる。<br>
 これにより、当初は20GB以上のメモリを使用していたステージが、約5GBのメモリ使用量で生成することが出来た。</p>
 <p>▽FlyWightパターン無しの場合
 <br><!-- リソースバンクの説明の画 -->
-<img src="images/ResourceBank3.jpg#titleImage" alt="ResourceBank">
+<img src = images/ResourceBank3.jpg class = normalImage>
 <br></p>
 <p>▽FlyWightパターン有りの場合
 <br><!-- リソースバンクの説明の画 -->
-<img src="images/ResourceBank4.jpg#titleImage" alt="ResourceBank">
+<img src = images/ResourceBank4.jpg class = normalImage>
 <br></p>
 <!-- 目次へのリンク_ここから -->
 <section class = "goToIndexText">

@@ -21,18 +21,17 @@ body
 {
     background-image: url(images/background.png);
     background-attachment: fixed;
-    /* background-size: cover; */
-    /* background-repeat: no-repeat; */
     background-position: left top;
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
 }
 
 /* タイトル画像のスタイル */
-img[src*="#titleImage"]
+.titleImage
 { 
     width: var(--kTitleImageWidth);
     height: var(--kTitleImageHeight);
+    box-shadow: 10px 10px 0 rgba(0,0,0,0.6);
 }
 
 .simpleFrame
@@ -43,13 +42,15 @@ img[src*="#titleImage"]
 }
 
 /* 通常の画像のスタイル */
-img[src*="#normaImage"]
+.normalImage
 { 
     width: var(--kNormalImageWidth);
     height: var(--kNormalImageHeight);
+    box-shadow: 10px 10px 0 rgba(0,0,0,0.6);
+    /*
     padding: 11px;
     background-color: #fff;
-    box-shadow: 0 3px 18px -4px rbga(0,0,0,0.8);
+    box-shadow: 0 3px 18px -4px rbga(0,0,0,0.8);*/
 }
 
 /* 「目次へ」のスタイル */
