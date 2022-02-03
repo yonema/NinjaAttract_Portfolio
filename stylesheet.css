@@ -35,11 +35,21 @@ img[src*="#titleImage"]
     height: var(--kTitleImageHeight);
 }
 
+.simpleFrame
+{
+    padding: 11px;
+    background-color: #fff;
+    box-shadow: 0 3px 18px -4px rbga(0,0,0,0.8);
+}
+
 /* 通常の画像のスタイル */
 img[src*="#normaImage"]
 { 
     width: var(--kNormalImageWidth);
     height: var(--kNormalImageHeight);
+    padding: 11px;
+    background-color: #fff;
+    box-shadow: 0 3px 18px -4px rbga(0,0,0,0.8);
 }
 
 /* 「目次へ」のスタイル */

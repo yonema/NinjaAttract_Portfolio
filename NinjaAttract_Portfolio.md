@@ -367,7 +367,17 @@
 
 # 5.操作説明
 
-hogehoge
+* Aボタン：ジャンプ
+* Yボタン：（車の近くで）車の上に乗る
+* RT（R2ボタン）：（地上で）ダッシュ、（空中で）スイング
+* 左スティック：移動
+* 右スティック：カメラ回転
+* 右スティック→押し込み：敵探知
+* STARTボタン：ミッション確認
+
+<br><!-- 操作説明の画像 -->
+![gameImage](images/Instructions.jpg#normaImage)
+<br>
 
 <!-- 目次へのリンク_ここから -->
 <section class = "goToIndexText">
