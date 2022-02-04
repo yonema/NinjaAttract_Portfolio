@@ -15,6 +15,12 @@
      */
      --kNormalImageWidth: 594px;
      --kNormalImageHeight: 324px;
+
+     /*
+     ミニ画像のサイズ
+     */
+     --kMinilImageWidth: 324px;
+     --kMinilImageHeight: 324px;
 }
 
 body
@@ -51,6 +57,13 @@ body
     padding: 11px;
     background-color: #fff;
     box-shadow: 0 3px 18px -4px rbga(0,0,0,0.8);*/
+}
+
+.miniImage
+{
+    width: var(--kMinilImageWidth);
+    height: var(--kMinilImageHeight);
+    box-shadow: 10px 10px 0 rgba(0,0,0,0.6);
 }
 
 /* 「目次へ」のスタイル */
