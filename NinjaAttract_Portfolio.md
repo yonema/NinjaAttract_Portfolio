@@ -19,14 +19,8 @@
 - [5.操作説明](#5操作説明)
 - [6.技術紹介](#6技術紹介)
   - [6.1.スイングについて](#61スイングについて)
-  - [6.2.カスケードシャドウ](#62カスケードシャドウ)
-  - [6.3.EVSM](#63evsm)
-  - [6.4.PBR](#64pbr)
   - [6.5.インスタンシング描画](#65インスタンシング描画)
-  - [6.6.フラスタムカリング](#66フラスタムカリング)
-  - [6.7.LOD](#67lod)
   - [6.8.FlyWeightパターン](#68flyweightパターン)
-  - [6.9.ベジェ曲線](#69ベジェ曲線)
   - [6.10.D3D12のエラー、警告の回避](#610d3d12のエラー警告の回避)
 - [7.ゲーム的にこだわったところ](#7ゲーム的にこだわったところ)
   - [7.1.スイングに爽快感を出すための工夫](#71スイングに爽快感を出すための工夫)
@@ -539,34 +533,34 @@
 <!-- 目次へのリンク_ここまで -->
 
 
-## 6.2.カスケードシャドウ
-&emsp;hogehoge
+<!-- ## 6.2.カスケードシャドウ
+&emsp;hogehoge -->
 
 <!-- 目次へのリンク_ここから -->
-<section class = "goToIndexText">
+<!-- <section class = "goToIndexText">
 
 [目次へ](#目次)
-</section>
+</section> -->
 <!-- 目次へのリンク_ここまで -->
 
-## 6.3.EVSM
-&emsp;hogehoge
+<!-- ## 6.3.EVSM
+&emsp;hogehoge -->
 
 <!-- 目次へのリンク_ここから -->
-<section class = "goToIndexText">
+<!-- <section class = "goToIndexText">
 
 [目次へ](#目次)
-</section>
+</section> -->
 <!-- 目次へのリンク_ここまで -->
 
-## 6.4.PBR
-&emsp;hogehoge
+<!-- ## 6.4.PBR
+&emsp;hogehoge -->
 
 <!-- 目次へのリンク_ここから -->
-<section class = "goToIndexText">
+<!-- <section class = "goToIndexText">
 
 [目次へ](#目次)
-</section>
+</section> -->
 <!-- 目次へのリンク_ここまで -->
 
 ## 6.5.インスタンシング描画
@@ -592,20 +586,6 @@
 6. 頂点シェーダーに、HLSLが用意してあるSV_InstanceIDセマンティクスを指定した引数を追加し、現在処理しているインスタンス番号が分かるようにする。
 7. ワールド行列の配列からインスタンス番号で適切なワールド行列を取得し、座標変換を行う。
 
-それぞれのくわしい手順を見ていく。
-
-1. **ワールド行列の配列の用意し、ワールド行列の配列をGPUのシェーダーリソースビューに渡す**
-
-5. 表示するモデルの数（以降**インスタンス数**）だけワールド行列の配列と、GPUにデータを送るために使用するストラクチャードバッファのメモリの確保を行う。
-6. ストラクチャードバッファをシェーダーリソースビューに渡す。
-7. ワールド行列の更新。
-8. ストラクチャードバッファを更新。
-9.  インスタンス数を指定してモデルのドローコールを呼ぶ。
-10. (ここからGPU(hlsl)側の処理)CPUから送られるワールド行列を受け取る変数を定義。
-11. 現在処理しているインスタンス番号が分かるように、頂点シェーダーにHLSLが用意してあるSV_InstanceIDセマンティクスを指定した引数を追加する。
-12. ワールド行列の配列からインスタンス番号で適切なワールド行列を取得する。
-13. 取得したワールド行列から座標変換を行う。
-
 <!-- 目次へのリンク_ここから -->
 <section class = "goToIndexText">
 
@@ -613,24 +593,24 @@
 </section>
 <!-- 目次へのリンク_ここまで -->
 
-## 6.6.フラスタムカリング
-&emsp;hogehoge
+<!-- ## 6.6.フラスタムカリング
+&emsp;hogehoge -->
 
 <!-- 目次へのリンク_ここから -->
-<section class = "goToIndexText">
+<!-- <section class = "goToIndexText">
 
 [目次へ](#目次)
-</section>
+</section> -->
 <!-- 目次へのリンク_ここまで -->
 
-## 6.7.LOD
-&emsp;hogehoge
+<!-- ## 6.7.LOD
+&emsp;hogehoge -->
 
 <!-- 目次へのリンク_ここから -->
-<section class = "goToIndexText">
+<!-- <section class = "goToIndexText">
 
 [目次へ](#目次)
-</section>
+</section> -->
 <!-- 目次へのリンク_ここまで -->
 
 ## 6.8.FlyWeightパターン
@@ -668,20 +648,73 @@
 </section>
 <!-- 目次へのリンク_ここまで -->
 
-## 6.9.ベジェ曲線
-&emsp;hogehoge
+<!-- ## 6.9.ベジェ曲線
+&emsp;hogehoge -->
 
 <!-- 目次へのリンク_ここから -->
-<section class = "goToIndexText">
+<!-- <section class = "goToIndexText">
 
 [目次へ](#目次)
-</section>
+</section> -->
 <!-- 目次へのリンク_ここまで -->
 
 ## 6.10.D3D12のエラー、警告の回避
+&emsp;VisualStudioの出力ウィンドウに表示されるD3D12のエラー、警告を全て回避した。このエラーが表示されていても、ゲームは動いているため、今まで気にしていなかったが、今回はこれらのエラーを全て除去することが出来た。
+
+<br><!-- D3D12の警告、エラーの画 -->
+<img src = images/d3d12Error1.jpg class = normalImage>
+<br>
+
+遭遇したエラーは主に次の三種類である。
+
 1. STATE_CREATION WARNING #0: UNKNOWN
 2. EXECUTION ERROR #613: RENDER_TARGET_FORMAT_MISMATCH_PIPELINE_STATE
 3. EXECUTION ERROR #538: INVALID_SUBRESOURCE_STATE
+
+これらのエラーの種類、発生した場所、解決方向は以下の通りである。
+
+1. **STATE_CREATION WARNING #0: UNKNOWN**
+   1. 警告の種類
+      * この警告はメモリリークの警告である。生成したオブジェクトを最後まで解放していないことが原因で出る警告だ。
+   2. 発生した場所
+      * この警告は、ゲームを終了した時に発生。
+      * 出力ウィンドウには、次のように表示された。
+```
+D3D12 WARNING: 	Live Object at 0x000001CCE55079B0, Refcount: 0. [ STATE_CREATION WARNING #0: UNKNOWN]
+```
+   3. 解決方法
+      * 全体検索で、オブジェクトを生成している場所を探し、きちんと破棄しているか確認し、解放するようにする。
+      * コードの一部をコメントアウトしてみて、症状が改善したか調べ、原因を特定し、解放するようにする。
+      * newでオブジェクトを生成するのではなく、スマートポインタのstd::unique_ptrを使用する。これにより、解放し忘れを防ぐ。
+
+2. **EXECUTION ERROR #613: RENDER_TARGET_FORMAT_MISMATCH_PIPELINE_STATE**
+   1. エラーの種類
+      * このエラーは、レンダリングターゲットを生成するときに指定したカラーフォーマットと、そのレンダリングターゲットに描画するオブジェクトのカラーフォーマットが違っている、というエラーだ。
+   2. 発生した場所
+      * G-Bufferにモデルを描画するときに発生。
+      * エフェクト、スプライトを描画するときに発生。
+      * 出力ウィンドウには、次のように表示された。
+```
+D3D12 ERROR: ID3D12CommandList::DrawIndexedInstanced: The render target format in slot 0 does not match that specified by the current pipeline state. (pipeline state = R16G16B16A16_FLOAT, RTV ID3D12Resource* = 0x000001CC784F0360:'Unnamed ID3D12Resource Object') [ EXECUTION ERROR #613: RENDER_TARGET_FORMAT_MISMATCH_PIPELINE_STATE]
+
+```
+   3. 解決方法
+      * G-Bufferにマルチレンダリングターゲットを利用してモデルを描画するとき、モデルに1つしかカラーフォーマットし指定していなかった。モデルに複数のカラーフォーマットを指定できるようにし、G-Bufferのカラーフォーマットと合わせることで解決した。
+      * エフェクトとスプライトは学校内製の簡易エンジンで最初から表示されていたため、カラーフォーマットを合わせることを見落としていた。指定している場所を調べ、修正した。
+
+3. **EXECUTION ERROR #538: INVALID_SUBRESOURCE_STATE**
+   1. エラーの種類
+      * これはレンダリングターゲットのサブリソースが不正、というエラーだ。
+   2. 発生した場所
+      * ポストエフェクトをかけたあと、スプライトを描画使用としたときに発生。
+      * 出力ウィンドウには、次のように表示された。
+```
+D3D12 ERROR: ID3D12CommandList::DrawIndexedInstanced: Resource state (0x0: D3D12_RESOURCE_STATE_[COMMON|PRESENT]) of resource (0x000001CC784F0360:'Unnamed ID3D12Resource Object') (subresource: 0) is invalid for use as a render target.  Expected State Bits (all): 0x4: D3D12_RESOURCE_STATE_RENDER_TARGET, Actual State: 0x0: D3D12_RESOURCE_STATE_[COMMON|PRESENT], Missing State: 0x4: D3D12_RESOURCE_STATE_RENDER_TARGET. [ EXECUTION ERROR #538: INVALID_SUBRESOURCE_STATE]
+```
+   3. 解決方法
+      * レンダリングの処理を一部ずつコメントアウトしていき、改善していないか調べて、原因がポストエフェクト後のスプライト描画する時だと判明。
+      * ポストエフェクトを実行した後スプライトを描画する際、レンダリングターゲットが使用可能になるまで待つ処理を入れ忘れていたため、修正。
+
 
 <!-- 目次へのリンク_ここから -->
 <section class = "goToIndexText">
