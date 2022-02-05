@@ -1,3 +1,4 @@
+/* グローバル変数 */
 :root
 {
     /* 
@@ -12,24 +13,43 @@
     タイトル画像のサイズ
     1980 * 0.3 = 594
     1080 * 0.3 = 324
-     */
+     \*/
      --kNormalImageWidth: 594px;
      --kNormalImageHeight: 324px;
 
-     /*
-     ミニ画像のサイズ
-     */
+    /* ミニ画像のサイズ */
      --kMinilImageWidth: 324px;
      --kMinilImageHeight: 324px;
+
+    /* 左寄せのアイコン用のパディング */
+     --kLeftAdjustIconMarginRight: 10px;
+     --kLeftAdjustIconMarginButtom: 10px;
+}
+
+html
+{
+    /* ページ内リンクの移動時に、スムーズに移動する */
+    scroll-behavior: smooth;
 }
 
 body
 {
+    /* 背景 */
     background-image: url(images/background.png);
     background-attachment: fixed;
     background-position: left top;
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
+
+    /* 表示アニメーション */
+    animation: fadeIn 1s forwards;
+}
+
+/* フェードインアニメーション */
+@keyframes fadeIn
+{
+    0% {opacity: 0;}
+    100% {opacity: 1;}
 }
 
 /* タイトル画像のスタイル */
@@ -40,30 +60,35 @@ body
     box-shadow: 10px 10px 0 rgba(0,0,0,0.6);
 }
 
-.simpleFrame
-{
-    padding: 11px;
-    background-color: #fff;
-    box-shadow: 0 3px 18px -4px rbga(0,0,0,0.8);
-}
-
 /* 通常の画像のスタイル */
 .normalImage
 { 
     width: var(--kNormalImageWidth);
     height: var(--kNormalImageHeight);
     box-shadow: 10px 10px 0 rgba(0,0,0,0.6);
-    /*
-    padding: 11px;
-    background-color: #fff;
-    box-shadow: 0 3px 18px -4px rbga(0,0,0,0.8);*/
 }
 
+/* ミニ画像のスタイル */
 .miniImage
 {
     width: var(--kMinilImageWidth);
     height: var(--kMinilImageHeight);
     box-shadow: 10px 10px 0 rgba(0,0,0,0.6);
+}
+
+/* 左寄せのアイコン */
+.LeftAdjustIcon
+{
+    float: left;
+    margin-right: var(--kLeftAdjustIconMarginRight);
+    margin-bottom: var(--kLeftAdjustIconMarginButtom);
+}
+
+/* 左寄せの説明用テキストのスタイル */
+.LeftAdjustIntroductionText
+{
+    float: left;
+    margin-bottom: var(--kLeftAdjustIconMarginButtom);
 }
 
 /* 「目次へ」のスタイル */
@@ -88,6 +113,12 @@ body
 .border
 {
     border: 3px solid #ddd;
+}
+
+/* 左寄せ */
+.LeftAdjust
+{
+    float: left;
 }
 
 /* <【CSS】おしゃれなボックスデザイン（囲み枠）のサンプル30>
