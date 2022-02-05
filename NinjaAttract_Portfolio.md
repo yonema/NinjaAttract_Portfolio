@@ -81,7 +81,10 @@
 
 # 2.担当ソースコード
 
-* ソースコード（cpp,h）
+<details><summary>
+● ソースコード（cpp,h）
+</summary>
+
   * AABB.cpp
   * AABB.h
   * AICar.cpp
@@ -250,7 +253,12 @@
   * Util.h
   * VectorRender.cpp
   * VectorRender.h
-* シェーダー（fx,h）
+</details>
+
+<details><summary>
+● シェーダー（fx,h）
+</summary>
+
   * bloom.fx
   * DeferredLighting.fx
   * DrawShadowMap.fx
@@ -262,7 +270,7 @@
   * RenderToGBufferFor3DModel.fx
   * SkyCubeMap.fx
   * TranslucentModel.fx
-
+</details>
 
 <!-- 目次へのリンク_ここから -->
 <section class = "goToIndexText">
@@ -275,7 +283,10 @@
 
 # 3.改造したエンジンコード
 
-* ソースコード（cpp,h）
+<details><summary>
+● ソースコード（cpp,h）
+</summary>
+
   * stdafx.h
     * CommonData.hのインクルードの追加（6行目）
   * EffectEngine.cpp
@@ -338,6 +349,7 @@
     * 同じddsファイルが使用される時、リソースを使いまわすように変更（240行目～265行目）
   * TkmFile.h
     * マテリアルに、テクスチャのファイルパスを保持し続けるように変更（41行目～45行目）
+</details>
 
 <!-- 目次へのリンク_ここから -->
 <section class = "goToIndexText">
