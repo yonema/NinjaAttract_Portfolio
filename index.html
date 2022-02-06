@@ -1,1351 +1,1087 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
-<title>NinjaAttract_Portfolio.md</title>
-<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/styles/default.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markdown-it-texmath/css/texmath.min.css">
+<link rel="stylesheet" href="file:///c:\Users\kbc20\.vscode\extensions\goessner.mdmath-2.7.4\themes\default\style.css">
 
-<style>
-/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
-/*---------------------------------------------------------------------------------------------
- *  Copyright (c) Microsoft Corporation. All rights reserved.
- *  Licensed under the MIT License. See License.txt in the project root for license information.
- *--------------------------------------------------------------------------------------------*/
-
-body {
-	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
-	font-size: var(--vscode-markdown-font-size, 14px);
-	padding: 0 26px;
-	line-height: var(--vscode-markdown-line-height, 22px);
-	word-wrap: break-word;
-}
-
-#code-csp-warning {
-	position: fixed;
-	top: 0;
-	right: 0;
-	color: white;
-	margin: 16px;
-	text-align: center;
-	font-size: 12px;
-	font-family: sans-serif;
-	background-color:#444444;
-	cursor: pointer;
-	padding: 6px;
-	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
-}
-
-#code-csp-warning:hover {
-	text-decoration: none;
-	background-color:#007acc;
-	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
-}
-
-body.scrollBeyondLastLine {
-	margin-bottom: calc(100vh - 22px);
-}
-
-body.showEditorSelection .code-line {
-	position: relative;
-}
-
-body.showEditorSelection .code-active-line:before,
-body.showEditorSelection .code-line:hover:before {
-	content: "";
-	display: block;
-	position: absolute;
-	top: 0;
-	left: -12px;
-	height: 100%;
-}
-
-body.showEditorSelection li.code-active-line:before,
-body.showEditorSelection li.code-line:hover:before {
-	left: -30px;
-}
-
-.vscode-light.showEditorSelection .code-active-line:before {
-	border-left: 3px solid rgba(0, 0, 0, 0.15);
-}
-
-.vscode-light.showEditorSelection .code-line:hover:before {
-	border-left: 3px solid rgba(0, 0, 0, 0.40);
-}
-
-.vscode-light.showEditorSelection .code-line .code-line:hover:before {
-	border-left: none;
-}
-
-.vscode-dark.showEditorSelection .code-active-line:before {
-	border-left: 3px solid rgba(255, 255, 255, 0.4);
-}
-
-.vscode-dark.showEditorSelection .code-line:hover:before {
-	border-left: 3px solid rgba(255, 255, 255, 0.60);
-}
-
-.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
-	border-left: none;
-}
-
-.vscode-high-contrast.showEditorSelection .code-active-line:before {
-	border-left: 3px solid rgba(255, 160, 0, 0.7);
-}
-
-.vscode-high-contrast.showEditorSelection .code-line:hover:before {
-	border-left: 3px solid rgba(255, 160, 0, 1);
-}
-
-.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
-	border-left: none;
-}
-
-img {
-	max-width: 100%;
-	max-height: 100%;
-}
-
-a {
-	text-decoration: none;
-}
-
-a:hover {
-	text-decoration: underline;
-}
-
-a:focus,
-input:focus,
-select:focus,
-textarea:focus {
-	outline: 1px solid -webkit-focus-ring-color;
-	outline-offset: -1px;
-}
-
-hr {
-	border: 0;
-	height: 2px;
-	border-bottom: 2px solid;
-}
-
-h1 {
-	padding-bottom: 0.3em;
-	line-height: 1.2;
-	border-bottom-width: 1px;
-	border-bottom-style: solid;
-}
-
-h1, h2, h3 {
-	font-weight: normal;
-}
-
-table {
-	border-collapse: collapse;
-}
-
-table > thead > tr > th {
-	text-align: left;
-	border-bottom: 1px solid;
-}
-
-table > thead > tr > th,
-table > thead > tr > td,
-table > tbody > tr > th,
-table > tbody > tr > td {
-	padding: 5px 10px;
-}
-
-table > tbody > tr + tr > td {
-	border-top: 1px solid;
-}
-
-blockquote {
-	margin: 0 7px 0 5px;
-	padding: 0 16px 0 10px;
-	border-left-width: 5px;
-	border-left-style: solid;
-}
-
-code {
-	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
-	font-size: 1em;
-	line-height: 1.357em;
-}
-
-body.wordWrap pre {
-	white-space: pre-wrap;
-}
-
-pre:not(.hljs),
-pre.hljs code > div {
-	padding: 16px;
-	border-radius: 3px;
-	overflow: auto;
-}
-
-pre code {
-	color: var(--vscode-editor-foreground);
-	tab-size: 4;
-}
-
-/** Theming */
-
-.vscode-light pre {
-	background-color: rgba(220, 220, 220, 0.4);
-}
-
-.vscode-dark pre {
-	background-color: rgba(10, 10, 10, 0.4);
-}
-
-.vscode-high-contrast pre {
-	background-color: rgb(0, 0, 0);
-}
-
-.vscode-high-contrast h1 {
-	border-color: rgb(0, 0, 0);
-}
-
-.vscode-light table > thead > tr > th {
-	border-color: rgba(0, 0, 0, 0.69);
-}
-
-.vscode-dark table > thead > tr > th {
-	border-color: rgba(255, 255, 255, 0.69);
-}
-
-.vscode-light h1,
-.vscode-light hr,
-.vscode-light table > tbody > tr + tr > td {
-	border-color: rgba(0, 0, 0, 0.18);
-}
-
-.vscode-dark h1,
-.vscode-dark hr,
-.vscode-dark table > tbody > tr + tr > td {
-	border-color: rgba(255, 255, 255, 0.18);
-}
-
-</style>
-<link rel="stylesheet" href="file:///d%3A/Github/portfolio/NinjaAttract_Portfolio/stylesheet.css" type="text/css">
-<style>
-/* Tomorrow Theme */
-/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
-/* Original theme - https://github.com/chriskempson/tomorrow-theme */
-
-/* Tomorrow Comment */
-.hljs-comment,
-.hljs-quote {
-	color: #8e908c;
-}
-
-/* Tomorrow Red */
-.hljs-variable,
-.hljs-template-variable,
-.hljs-tag,
-.hljs-name,
-.hljs-selector-id,
-.hljs-selector-class,
-.hljs-regexp,
-.hljs-deletion {
-	color: #c82829;
-}
-
-/* Tomorrow Orange */
-.hljs-number,
-.hljs-built_in,
-.hljs-builtin-name,
-.hljs-literal,
-.hljs-type,
-.hljs-params,
-.hljs-meta,
-.hljs-link {
-	color: #f5871f;
-}
-
-/* Tomorrow Yellow */
-.hljs-attribute {
-	color: #eab700;
-}
-
-/* Tomorrow Green */
-.hljs-string,
-.hljs-symbol,
-.hljs-bullet,
-.hljs-addition {
-	color: #718c00;
-}
-
-/* Tomorrow Blue */
-.hljs-title,
-.hljs-section {
-	color: #4271ae;
-}
-
-/* Tomorrow Purple */
-.hljs-keyword,
-.hljs-selector-tag {
-	color: #8959a8;
-}
-
-.hljs {
-	display: block;
-	overflow-x: auto;
-	color: #4d4d4c;
-	padding: 0.5em;
-}
-
-.hljs-emphasis {
-	font-style: italic;
-}
-
-.hljs-strong {
-	font-weight: bold;
-}
-</style>
-
-<style>
-/*
- * Markdown PDF CSS
- */
-
- body {
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
-	padding: 0 12px;
-}
-
-pre {
-	background-color: #f8f8f8;
-	border: 1px solid #cccccc;
-	border-radius: 3px;
-	overflow-x: auto;
-	white-space: pre-wrap;
-	overflow-wrap: break-word;
-}
-
-pre:not(.hljs) {
-	padding: 23px;
-	line-height: 19px;
-}
-
-blockquote {
-	background: rgba(127, 127, 127, 0.1);
-	border-color: rgba(0, 122, 204, 0.5);
-}
-
-.emoji {
-	height: 1.4em;
-}
-
-code {
-	font-size: 14px;
-	line-height: 19px;
-}
-
-/* for inline code */
-:not(pre):not(.hljs) > code {
-	color: #C9AE75; /* Change the old color so it seems less like an error */
-	font-size: inherit;
-}
-
-/* Page Break : use <div class="page"/> to insert page break
--------------------------------------------------------- */
-.page {
-	page-break-after: always;
-}
-
-</style>
-
-<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
 </head>
-<body>
-  <script>
-    mermaid.initialize({
-      startOnLoad: true,
-      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
-          ? 'dark'
-          : 'default'
-    });
-  </script>
+<body class="markdown-body">
+<div  dir="auto" ></div>
 <link href="stylesheet.css" rel="stylesheet"></link>
-<h1 id="ninja-attract%E3%83%9D%E3%83%BC%E3%83%88%E3%83%95%E3%82%A9%E3%83%AA%E3%82%AA---omit-in-toc"><strong>「Ninja Attract」ポートフォリオ</strong><!-- omit in toc --></h1>
-<h2 id="%E6%B2%B3%E5%8E%9F%E9%9B%BB%E5%AD%90%E3%83%93%E3%82%B8%E3%83%8D%E3%82%B9%E5%B0%82%E9%96%80%E5%AD%A6%E6%A0%A1-%E3%82%B2%E3%83%BC%E3%83%A0%E3%82%AF%E3%83%AA%E3%82%A8%E3%82%A4%E3%82%BF%E3%83%BC%E7%A7%912%E5%B9%B4">河原電子ビジネス専門学校　ゲームクリエイター科2年</h2>
-<h2 id="%E6%B0%8F%E5%90%8D%E7%B1%B3%E5%9C%B0-%E7%9C%9F%E5%A4%AE">氏名：米地 真央</h2>
-<p><br><!-- タイトル画像 -->
+<h1 dir="auto" id="ninja-attract%E3%83%9D%E3%83%BC%E3%83%88%E3%83%95%E3%82%A9%E3%83%AA%E3%82%AA---omit-in-toc"><strong>「Ninja Attract」ポートフォリオ</strong><!-- omit in toc --></h1>
+<h2 dir="auto" id="%E6%B2%B3%E5%8E%9F%E9%9B%BB%E5%AD%90%E3%83%93%E3%82%B8%E3%83%8D%E3%82%B9%E5%B0%82%E9%96%80%E5%AD%A6%E6%A0%A1-%E3%82%B2%E3%83%BC%E3%83%A0%E3%82%AF%E3%83%AA%E3%82%A8%E3%82%A4%E3%82%BF%E3%83%BC%E7%A7%912%E5%B9%B4">河原電子ビジネス専門学校　ゲームクリエイター科2年</h2>
+<h2 dir="auto" id="%E6%B0%8F%E5%90%8D%E7%B1%B3%E5%9C%B0-%E7%9C%9F%E5%A4%AE">氏名：米地 真央</h2>
+<p dir="auto"><br><!-- タイトル画像 -->
 <img src = images/title.jpg class = titleImage>
 <br></p>
-<hr>
-<h1 id="%E7%9B%AE%E6%AC%A1">目次</h1>
-<ul>
-<li><a href="#%E7%9B%AE%E6%AC%A1">目次</a></li>
-<li><a href="#1%E4%BD%9C%E5%93%81%E6%A6%82%E8%A6%81">1.作品概要</a></li>
-<li><a href="#2%E6%8B%85%E5%BD%93%E3%82%BD%E3%83%BC%E3%82%B9%E3%82%B3%E3%83%BC%E3%83%89">2.担当ソースコード</a></li>
-<li><a href="#3%E6%94%B9%E9%80%A0%E3%81%97%E3%81%9F%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%B3%E3%82%B3%E3%83%BC%E3%83%89">3.改造したエンジンコード</a></li>
-<li><a href="#4%E3%82%B2%E3%83%BC%E3%83%A0%E5%86%85%E5%AE%B9">4.ゲーム内容</a></li>
-<li><a href="#5%E6%93%8D%E4%BD%9C%E8%AA%AC%E6%98%8E">5.操作説明</a></li>
-<li><a href="#6%E6%8A%80%E8%A1%93%E7%B4%B9%E4%BB%8B">6.技術紹介</a>
-<ul>
-<li><a href="#61%E3%82%B9%E3%82%A4%E3%83%B3%E3%82%B0%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6">6.1.スイングについて</a></li>
-<li><a href="#62%E3%82%A4%E3%83%B3%E3%82%B9%E3%82%BF%E3%83%B3%E3%82%B7%E3%83%B3%E3%82%B0%E6%8F%8F%E7%94%BB">6.2.インスタンシング描画</a></li>
-<li><a href="#63flyweight%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B3">6.3.FlyWeightパターン</a></li>
-<li><a href="#64d3d12%E3%81%AE%E3%82%A8%E3%83%A9%E3%83%BC%E8%AD%A6%E5%91%8A%E3%81%AE%E5%9B%9E%E9%81%BF">6.4.D3D12のエラー、警告の回避</a></li>
+<hr dir="auto">
+<h1 dir="auto" id="%E7%9B%AE%E6%AC%A1">目次</h1>
+<ul dir="auto">
+<li dir="auto"><a href="#%E7%9B%AE%E6%AC%A1">目次</a></li>
+<li dir="auto"><a href="#1%E4%BD%9C%E5%93%81%E6%A6%82%E8%A6%81">1.作品概要</a></li>
+<li dir="auto"><a href="#2%E6%8B%85%E5%BD%93%E3%82%BD%E3%83%BC%E3%82%B9%E3%82%B3%E3%83%BC%E3%83%89">2.担当ソースコード</a></li>
+<li dir="auto"><a href="#3%E6%94%B9%E9%80%A0%E3%81%97%E3%81%9F%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%B3%E3%82%B3%E3%83%BC%E3%83%89">3.改造したエンジンコード</a></li>
+<li dir="auto"><a href="#4%E3%82%B2%E3%83%BC%E3%83%A0%E5%86%85%E5%AE%B9">4.ゲーム内容</a></li>
+<li dir="auto"><a href="#5%E6%93%8D%E4%BD%9C%E8%AA%AC%E6%98%8E">5.操作説明</a></li>
+<li dir="auto"><a href="#6%E6%8A%80%E8%A1%93%E7%B4%B9%E4%BB%8B">6.技術紹介</a>
+<ul dir="auto">
+<li dir="auto"><a href="#61%E3%82%B9%E3%82%A4%E3%83%B3%E3%82%B0%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6">6.1.スイングについて</a></li>
+<li dir="auto"><a href="#62%E3%82%A4%E3%83%B3%E3%82%B9%E3%82%BF%E3%83%B3%E3%82%B7%E3%83%B3%E3%82%B0%E6%8F%8F%E7%94%BB">6.2.インスタンシング描画</a></li>
+<li dir="auto"><a href="#63flyweight%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B3">6.3.FlyWeightパターン</a></li>
+<li dir="auto"><a href="#64d3d12%E3%81%AE%E3%82%A8%E3%83%A9%E3%83%BC%E8%AD%A6%E5%91%8A%E3%81%AE%E5%9B%9E%E9%81%BF">6.4.D3D12のエラー、警告の回避</a></li>
 </ul>
 </li>
-<li><a href="#7%E3%82%B2%E3%83%BC%E3%83%A0%E7%9A%84%E3%81%AB%E3%81%93%E3%81%A0%E3%82%8F%E3%81%A3%E3%81%9F%E3%81%A8%E3%81%93%E3%82%8D">7.ゲーム的にこだわったところ</a>
-<ul>
-<li><a href="#71%E3%82%B9%E3%82%A4%E3%83%B3%E3%82%B0%E3%81%AB%E7%88%BD%E5%BF%AB%E6%84%9F%E3%82%92%E5%87%BA%E3%81%99%E3%81%9F%E3%82%81%E3%81%AE%E5%B7%A5%E5%A4%AB">7.1.スイングに爽快感を出すための工夫</a></li>
-<li><a href="#72ibl%E3%81%AE%E5%BD%B1%E9%9F%BF%E5%BA%A6%E3%82%92%E6%9B%B8%E3%81%84%E3%81%9F%E3%83%86%E3%82%AF%E3%82%B9%E3%83%81%E3%83%A3%E3%81%AE%E4%BD%BF%E7%94%A8">7.2.IBLの影響度を書いたテクスチャの使用</a></li>
-<li><a href="#73%E5%85%A5%E5%8A%9B%E6%83%85%E5%A0%B1%E3%81%AE%E3%82%BB%E3%83%BC%E3%83%96%E3%81%A8%E3%83%AD%E3%83%BC%E3%83%89%E3%81%AB%E3%82%88%E3%82%8B%E6%BC%94%E5%87%BA">7.3.入力情報のセーブとロードによる演出</a></li>
-<li><a href="#74vroid%E3%81%8B%E3%82%89%E8%87%AA%E4%BD%9C%E3%82%B2%E3%83%BC%E3%83%A0%E3%81%A7%E8%A1%A8%E7%A4%BA%E3%81%A7%E3%81%8D%E3%82%8B%E3%83%A2%E3%83%87%E3%83%AB%E3%83%87%E3%83%BC%E3%82%BF%E3%81%B8%E3%81%AE%E5%A4%89%E6%8F%9B">7.4.VRoidから自作ゲームで表示できるモデルデータへの変換</a></li>
-</ul>
-</li>
-</ul>
-<h1 id="1%E4%BD%9C%E5%93%81%E6%A6%82%E8%A6%81">1.作品概要</h1>
-<ul>
-<li>タイトル
-<ul>
-<li>Ninja Attract</li>
-</ul>
-</li>
-<li>学校
-<ul>
-<li>河原電子ビジネス専門学校</li>
-</ul>
-</li>
-<li>制作人数
-<ul>
-<li>1人</li>
-</ul>
-</li>
-<li>制作期間
-<ul>
-<li>2021年9月～2022年2月</li>
-</ul>
-</li>
-<li>ゲームジャンル
-<ul>
-<li>アクションゲーム</li>
-</ul>
-</li>
-<li>プレイ人数
-<ul>
-<li>1人</li>
-</ul>
-</li>
-<li>対応ハード
-<ul>
-<li>PC Windows10
-<ul>
-<li>Xbox 360 コントローラー</li>
+<li dir="auto"><a href="#7%E3%82%B2%E3%83%BC%E3%83%A0%E7%9A%84%E3%81%AB%E3%81%93%E3%81%A0%E3%82%8F%E3%81%A3%E3%81%9F%E3%81%A8%E3%81%93%E3%82%8D">7.ゲーム的にこだわったところ</a>
+<ul dir="auto">
+<li dir="auto"><a href="#71%E3%82%B9%E3%82%A4%E3%83%B3%E3%82%B0%E3%81%AB%E7%88%BD%E5%BF%AB%E6%84%9F%E3%82%92%E5%87%BA%E3%81%99%E3%81%9F%E3%82%81%E3%81%AE%E5%B7%A5%E5%A4%AB">7.1.スイングに爽快感を出すための工夫</a></li>
+<li dir="auto"><a href="#72ibl%E3%81%AE%E5%BD%B1%E9%9F%BF%E5%BA%A6%E3%82%92%E6%9B%B8%E3%81%84%E3%81%9F%E3%83%86%E3%82%AF%E3%82%B9%E3%83%81%E3%83%A3%E3%81%AE%E4%BD%BF%E7%94%A8">7.2.IBLの影響度を書いたテクスチャの使用</a></li>
+<li dir="auto"><a href="#73%E5%85%A5%E5%8A%9B%E6%83%85%E5%A0%B1%E3%81%AE%E3%82%BB%E3%83%BC%E3%83%96%E3%81%A8%E3%83%AD%E3%83%BC%E3%83%89%E3%81%AB%E3%82%88%E3%82%8B%E6%BC%94%E5%87%BA">7.3.入力情報のセーブとロードによる演出</a></li>
+<li dir="auto"><a href="#74vroid%E3%81%8B%E3%82%89%E8%87%AA%E4%BD%9C%E3%82%B2%E3%83%BC%E3%83%A0%E3%81%A7%E8%A1%A8%E7%A4%BA%E3%81%A7%E3%81%8D%E3%82%8B%E3%83%A2%E3%83%87%E3%83%AB%E3%83%87%E3%83%BC%E3%82%BF%E3%81%B8%E3%81%AE%E5%A4%89%E6%8F%9B">7.4.VRoidから自作ゲームで表示できるモデルデータへの変換</a></li>
 </ul>
 </li>
 </ul>
-</li>
-<li>使用言語
-<ul>
-<li>C++</li>
-<li>HLSL</li>
+<h1 dir="auto" id="1%E4%BD%9C%E5%93%81%E6%A6%82%E8%A6%81">1.作品概要</h1>
+<ul dir="auto">
+<li dir="auto">タイトル
+<ul dir="auto">
+<li dir="auto">Ninja Attract</li>
 </ul>
 </li>
-<li>開発環境
-<ul>
-<li>エンジン
-<ul>
-<li>学校内製の簡易エンジン(DirectX12)</li>
+<li dir="auto">学校
+<ul dir="auto">
+<li dir="auto">河原電子ビジネス専門学校</li>
 </ul>
 </li>
-<li>プログラム
-<ul>
-<li>Visual Studio 2019</li>
+<li dir="auto">制作人数
+<ul dir="auto">
+<li dir="auto">1人</li>
 </ul>
 </li>
-<li>3Dモデル
-<ul>
-<li>3ds MAX</li>
-<li>VRoid</li>
+<li dir="auto">制作期間
+<ul dir="auto">
+<li dir="auto">2021年9月～2022年2月</li>
 </ul>
 </li>
-<li>エフェクト
-<ul>
-<li>Effeckseer</li>
+<li dir="auto">ゲームジャンル
+<ul dir="auto">
+<li dir="auto">アクションゲーム</li>
 </ul>
 </li>
-<li>画像
-<ul>
-<li>Adobe Photoshop</li>
+<li dir="auto">プレイ人数
+<ul dir="auto">
+<li dir="auto">1人</li>
 </ul>
 </li>
-<li>バージョン管理
-<ul>
-<li>Git Hub</li>
-</ul>
-</li>
-<li>タスク管理
-<ul>
-<li>Redmine</li>
+<li dir="auto">対応ハード
+<ul dir="auto">
+<li dir="auto">PC Windows10
+<ul dir="auto">
+<li dir="auto">Xbox 360 コントローラー</li>
 </ul>
 </li>
 </ul>
 </li>
-<li>GitHubURL
-<ul>
-<li><a href="https://github.com/yonema/NinjaAttract_MyGame">https://github.com/yonema/NinjaAttract_MyGame</a></li>
+<li dir="auto">使用言語
+<ul dir="auto">
+<li dir="auto">C++</li>
+<li dir="auto">HLSL</li>
 </ul>
 </li>
-<li>備考
-<ul>
-<li>就活作品用に制作</li>
-<li>第10回全国専門学校ゲームコンペティション「第10回全国専門学校ゲームコンペティション」に応募</li>
+<li dir="auto">開発環境
+<ul dir="auto">
+<li dir="auto">エンジン
+<ul dir="auto">
+<li dir="auto">学校内製の簡易エンジン(DirectX12)</li>
+</ul>
+</li>
+<li dir="auto">プログラム
+<ul dir="auto">
+<li dir="auto">Visual Studio 2019</li>
+</ul>
+</li>
+<li dir="auto">3Dモデル
+<ul dir="auto">
+<li dir="auto">3ds MAX</li>
+<li dir="auto">VRoid</li>
+</ul>
+</li>
+<li dir="auto">エフェクト
+<ul dir="auto">
+<li dir="auto">Effeckseer</li>
+</ul>
+</li>
+<li dir="auto">画像
+<ul dir="auto">
+<li dir="auto">Adobe Photoshop</li>
+</ul>
+</li>
+<li dir="auto">バージョン管理
+<ul dir="auto">
+<li dir="auto">Git Hub</li>
+</ul>
+</li>
+<li dir="auto">タスク管理
+<ul dir="auto">
+<li dir="auto">Redmine</li>
 </ul>
 </li>
 </ul>
+</li>
+<li dir="auto">GitHubURL
+<ul dir="auto">
+<li dir="auto"><a href="https://github.com/yonema/NinjaAttract_MyGame">https://github.com/yonema/NinjaAttract_MyGame</a></li>
+</ul>
+</li>
+<li dir="auto">備考
+<ul dir="auto">
+<li dir="auto">就活作品用に制作</li>
+<li dir="auto">第10回全国専門学校ゲームコンペティション「第10回全国専門学校ゲームコンペティション」に応募</li>
+</ul>
+</li>
+</ul>
+<div  dir="auto" ></div>
 <!-- 目次へのリンク_ここから -->
+<div  dir="auto" ></div>
 <section class = "goToIndexText">
-<p><a href="#%E7%9B%AE%E6%AC%A1">目次へ</a></p>
+<p dir="auto"><a href="#%E7%9B%AE%E6%AC%A1">目次へ</a></p>
+<div  dir="auto" ></div>
 </section>
 <!-- 目次へのリンク_ここまで -->
-<hr>
-<h1 id="2%E6%8B%85%E5%BD%93%E3%82%BD%E3%83%BC%E3%82%B9%E3%82%B3%E3%83%BC%E3%83%89">2.担当ソースコード</h1>
+<hr dir="auto">
+<h1 dir="auto" id="2%E6%8B%85%E5%BD%93%E3%82%BD%E3%83%BC%E3%82%B9%E3%82%B3%E3%83%BC%E3%83%89">2.担当ソースコード</h1>
+<div  dir="auto" ></div>
 <details><summary>
 ● ソースコード（cpp,h）
 </summary>
-<ul>
-<li>AABB.cpp</li>
-<li>AABB.h</li>
-<li>AICar.cpp</li>
-<li>AICar.h</li>
-<li>AICharacterBase.cpp</li>
-<li>AICharacterBase.h</li>
-<li>AICharacterConstData.h</li>
-<li>AIConstData.h</li>
-<li>AIField.cpp</li>
-<li>AIField.h</li>
-<li>AlphaMap.cpp</li>
-<li>AlphaMap.h</li>
-<li>BackGround.cpp</li>
-<li>BackGround.h</li>
-<li>BezierCurve.cpp</li>
-<li>BezierCurve.h</li>
-<li>BGM.cpp</li>
-<li>BGM.h</li>
-<li>BGMConstData.h</li>
-<li>Bloom.cpp</li>
-<li>Bloom.h</li>
-<li>BuildingConstData.h</li>
-<li>Buildings.cpp</li>
-<li>Buildings.h</li>
-<li>CascadeShadowMapMatrix.cpp</li>
-<li>CascadeShadowMapMatrix.h</li>
-<li>CEffectPlayer.cpp</li>
-<li>CommonData.h</li>
-<li>CTestMapForShadow.cpp</li>
-<li>CTestMapForShadow.h</li>
-<li>DebugConstData.h</li>
-<li>DebugManager.cpp</li>
-<li>DebugManager.h</li>
-<li>DirectionalLight.cpp</li>
-<li>DirectionalLight.h</li>
-<li>EffectPlayer.h</li>
-<li>EnemyCatchUI.cpp</li>
-<li>EnemyCatchUI.h</li>
-<li>Fade.cpp</li>
-<li>Fade.h</li>
-<li>FontRender.cpp</li>
-<li>FontRender.h</li>
-<li>FontRenderConstData.h</li>
-<li>Game.cpp</li>
-<li>Game.h</li>
-<li>GameMainState.cpp</li>
-<li>GameMainState.h</li>
-<li>GameMainStateConstData.h</li>
-<li>GameMainUI.cpp</li>
-<li>GameMainUI.h</li>
-<li>GameObjectNameData.h</li>
-<li>GameTime.cpp</li>
-<li>GameTime.h</li>
-<li>GaussianBlur.cpp</li>
-<li>GaussianBlur.h</li>
-<li>GaussianBlurConstData.h</li>
-<li>GeometryData.cpp</li>
-<li>GeometryData.h</li>
-<li>Goal.cpp</li>
-<li>Goal.h</li>
-<li>GoalConstData.h</li>
-<li>Level3D.cpp</li>
-<li>Level3D.h</li>
-<li>LightConstData.h</li>
-<li>LightData.h</li>
-<li>LightManager.cpp</li>
-<li>LightManager.h</li>
-<li>main.cpp</li>
-<li>MainMap.cpp</li>
-<li>MainMap.h</li>
-<li>MapChip.cpp</li>
-<li>MapChip.h</li>
-<li>MapConstDatah.h</li>
-<li>MiniMap.cpp</li>
-<li>MiniMap.h</li>
-<li>MissionUI.cpp</li>
-<li>MissionUI.h</li>
-<li>ModelRender.cpp</li>
-<li>ModelRender.h</li>
-<li>ModelRenderConstData.h</li>
-<li>ModelRenderData.h</li>
-<li>MyEngine.cpp</li>
-<li>MyEngine.h</li>
-<li>NatureConstData.h</li>
-<li>Noncopyable.h</li>
-<li>Player.cpp</li>
-<li>Player.h</li>
-<li>PlayerCamera.cpp</li>
-<li>PlayerCamera.h</li>
-<li>PlayerCatchEnemy.cpp</li>
-<li>PlayerCatchEnemy.h</li>
-<li>PlayerCommandInput.cpp</li>
-<li>PlayerCommandInput.h</li>
-<li>PlayerConstData.h</li>
-<li>PlayerInput.cpp</li>
-<li>PlayerInput.h</li>
-<li>PlayerModelAnimation.cpp</li>
-<li>PlayerModelAnimation.h</li>
-<li>PlayerMovement.cpp</li>
-<li>PlayerMovement.h</li>
-<li>PlayerOnEnemy.cpp</li>
-<li>PlayerOnEnemy.h</li>
-<li>PlayerShadowMap.cpp</li>
-<li>PlayerShadowMap.h</li>
-<li>PlayerStringModel.cpp</li>
-<li>PlayerStringModel.h</li>
-<li>PlayerSwingAction.cpp</li>
-<li>PlayerSwingAction.h</li>
-<li>PlayerWalkAndRun.cpp</li>
-<li>PlayerWalkAndRun.h</li>
-<li>PlayerWallRun.cpp</li>
-<li>PlayerWallRun.h</li>
-<li>PointLight.cpp</li>
-<li>PointLight</li>
-<li>PostEffect.cpp</li>
-<li>PostEffect.h</li>
-<li>PostEffectConstData.h</li>
-<li>PriorityData.h</li>
-<li>ProtoMap.cpp</li>
-<li>ProtoMap.h</li>
-<li>Render.cpp</li>
-<li>Render.h</li>
-<li>RenderingEngine.cpp</li>
-<li>RenderingEngine.h</li>
-<li>RenderingEngineConstData.h</li>
-<li>SavedPlayerInputData.cpp</li>
-<li>SavedPlayerInputData.h</li>
-<li>SavedPlayerInputDataConstData.h</li>
-<li>SceneGeometryData.cpp</li>
-<li>SceneGeometryData.h</li>
-<li>ShadowConstDatah.h</li>
-<li>ShadowMapRender.cpp</li>
-<li>ShadowMapRender.h</li>
-<li>SkyCube.cpp</li>
-<li>SkyCube.h</li>
-<li>SoundCue.cpp</li>
-<li>SoundCue.h</li>
-<li>SpotLight.cpp</li>
-<li>SpotLight.h</li>
-<li>SpringCamera.cpp</li>
-<li>SpringCamera.h</li>
-<li>SpriteRender.cpp</li>
-<li>SpriteRender.h</li>
-<li>SpriteRenderConstData.h</li>
-<li>StopWatch.h</li>
-<li>StringActionTargetManager.cpp</li>
-<li>StringActionTargetManager.h</li>
-<li>SwingTarget.cpp</li>
-<li>SwingTarget.h</li>
-<li>TestMap.cpp</li>
-<li>TestMap.h</li>
-<li>TestMapForLevel3D.cpp</li>
-<li>TestMapForLevel3D.h</li>
-<li>TestMapForPlayerMove.cpp</li>
-<li>TestMapForPlayerMove.h</li>
-<li>TestMapForSpotLight.cpp</li>
-<li>TestMapForSpotLight.h</li>
-<li>TextPanelRender.cpp</li>
-<li>TextPanelRender.h</li>
-<li>TitleMap.cpp</li>
-<li>TitleMap.h</li>
-<li>TklFile.cpp</li>
-<li>TklFile.h</li>
-<li>TResourceBank.h</li>
-<li>UIConstData.h</li>
-<li>Util.h</li>
-<li>VectorRender.cpp</li>
-<li>VectorRender.h</li>
+<ul dir="auto">
+<li dir="auto">AABB.cpp</li>
+<li dir="auto">AABB.h</li>
+<li dir="auto">AICar.cpp</li>
+<li dir="auto">AICar.h</li>
+<li dir="auto">AICharacterBase.cpp</li>
+<li dir="auto">AICharacterBase.h</li>
+<li dir="auto">AICharacterConstData.h</li>
+<li dir="auto">AIConstData.h</li>
+<li dir="auto">AIField.cpp</li>
+<li dir="auto">AIField.h</li>
+<li dir="auto">AlphaMap.cpp</li>
+<li dir="auto">AlphaMap.h</li>
+<li dir="auto">BackGround.cpp</li>
+<li dir="auto">BackGround.h</li>
+<li dir="auto">BezierCurve.cpp</li>
+<li dir="auto">BezierCurve.h</li>
+<li dir="auto">BGM.cpp</li>
+<li dir="auto">BGM.h</li>
+<li dir="auto">BGMConstData.h</li>
+<li dir="auto">Bloom.cpp</li>
+<li dir="auto">Bloom.h</li>
+<li dir="auto">BuildingConstData.h</li>
+<li dir="auto">Buildings.cpp</li>
+<li dir="auto">Buildings.h</li>
+<li dir="auto">CascadeShadowMapMatrix.cpp</li>
+<li dir="auto">CascadeShadowMapMatrix.h</li>
+<li dir="auto">CEffectPlayer.cpp</li>
+<li dir="auto">CommonData.h</li>
+<li dir="auto">CTestMapForShadow.cpp</li>
+<li dir="auto">CTestMapForShadow.h</li>
+<li dir="auto">DebugConstData.h</li>
+<li dir="auto">DebugManager.cpp</li>
+<li dir="auto">DebugManager.h</li>
+<li dir="auto">DirectionalLight.cpp</li>
+<li dir="auto">DirectionalLight.h</li>
+<li dir="auto">EffectPlayer.h</li>
+<li dir="auto">EnemyCatchUI.cpp</li>
+<li dir="auto">EnemyCatchUI.h</li>
+<li dir="auto">Fade.cpp</li>
+<li dir="auto">Fade.h</li>
+<li dir="auto">FontRender.cpp</li>
+<li dir="auto">FontRender.h</li>
+<li dir="auto">FontRenderConstData.h</li>
+<li dir="auto">Game.cpp</li>
+<li dir="auto">Game.h</li>
+<li dir="auto">GameMainState.cpp</li>
+<li dir="auto">GameMainState.h</li>
+<li dir="auto">GameMainStateConstData.h</li>
+<li dir="auto">GameMainUI.cpp</li>
+<li dir="auto">GameMainUI.h</li>
+<li dir="auto">GameObjectNameData.h</li>
+<li dir="auto">GameTime.cpp</li>
+<li dir="auto">GameTime.h</li>
+<li dir="auto">GaussianBlur.cpp</li>
+<li dir="auto">GaussianBlur.h</li>
+<li dir="auto">GaussianBlurConstData.h</li>
+<li dir="auto">GeometryData.cpp</li>
+<li dir="auto">GeometryData.h</li>
+<li dir="auto">Goal.cpp</li>
+<li dir="auto">Goal.h</li>
+<li dir="auto">GoalConstData.h</li>
+<li dir="auto">Level3D.cpp</li>
+<li dir="auto">Level3D.h</li>
+<li dir="auto">LightConstData.h</li>
+<li dir="auto">LightData.h</li>
+<li dir="auto">LightManager.cpp</li>
+<li dir="auto">LightManager.h</li>
+<li dir="auto">main.cpp</li>
+<li dir="auto">MainMap.cpp</li>
+<li dir="auto">MainMap.h</li>
+<li dir="auto">MapChip.cpp</li>
+<li dir="auto">MapChip.h</li>
+<li dir="auto">MapConstDatah.h</li>
+<li dir="auto">MiniMap.cpp</li>
+<li dir="auto">MiniMap.h</li>
+<li dir="auto">MissionUI.cpp</li>
+<li dir="auto">MissionUI.h</li>
+<li dir="auto">ModelRender.cpp</li>
+<li dir="auto">ModelRender.h</li>
+<li dir="auto">ModelRenderConstData.h</li>
+<li dir="auto">ModelRenderData.h</li>
+<li dir="auto">MyEngine.cpp</li>
+<li dir="auto">MyEngine.h</li>
+<li dir="auto">NatureConstData.h</li>
+<li dir="auto">Noncopyable.h</li>
+<li dir="auto">Player.cpp</li>
+<li dir="auto">Player.h</li>
+<li dir="auto">PlayerCamera.cpp</li>
+<li dir="auto">PlayerCamera.h</li>
+<li dir="auto">PlayerCatchEnemy.cpp</li>
+<li dir="auto">PlayerCatchEnemy.h</li>
+<li dir="auto">PlayerCommandInput.cpp</li>
+<li dir="auto">PlayerCommandInput.h</li>
+<li dir="auto">PlayerConstData.h</li>
+<li dir="auto">PlayerInput.cpp</li>
+<li dir="auto">PlayerInput.h</li>
+<li dir="auto">PlayerModelAnimation.cpp</li>
+<li dir="auto">PlayerModelAnimation.h</li>
+<li dir="auto">PlayerMovement.cpp</li>
+<li dir="auto">PlayerMovement.h</li>
+<li dir="auto">PlayerOnEnemy.cpp</li>
+<li dir="auto">PlayerOnEnemy.h</li>
+<li dir="auto">PlayerShadowMap.cpp</li>
+<li dir="auto">PlayerShadowMap.h</li>
+<li dir="auto">PlayerStringModel.cpp</li>
+<li dir="auto">PlayerStringModel.h</li>
+<li dir="auto">PlayerSwingAction.cpp</li>
+<li dir="auto">PlayerSwingAction.h</li>
+<li dir="auto">PlayerWalkAndRun.cpp</li>
+<li dir="auto">PlayerWalkAndRun.h</li>
+<li dir="auto">PlayerWallRun.cpp</li>
+<li dir="auto">PlayerWallRun.h</li>
+<li dir="auto">PointLight.cpp</li>
+<li dir="auto">PointLight</li>
+<li dir="auto">PostEffect.cpp</li>
+<li dir="auto">PostEffect.h</li>
+<li dir="auto">PostEffectConstData.h</li>
+<li dir="auto">PriorityData.h</li>
+<li dir="auto">ProtoMap.cpp</li>
+<li dir="auto">ProtoMap.h</li>
+<li dir="auto">Render.cpp</li>
+<li dir="auto">Render.h</li>
+<li dir="auto">RenderingEngine.cpp</li>
+<li dir="auto">RenderingEngine.h</li>
+<li dir="auto">RenderingEngineConstData.h</li>
+<li dir="auto">SavedPlayerInputData.cpp</li>
+<li dir="auto">SavedPlayerInputData.h</li>
+<li dir="auto">SavedPlayerInputDataConstData.h</li>
+<li dir="auto">SceneGeometryData.cpp</li>
+<li dir="auto">SceneGeometryData.h</li>
+<li dir="auto">ShadowConstDatah.h</li>
+<li dir="auto">ShadowMapRender.cpp</li>
+<li dir="auto">ShadowMapRender.h</li>
+<li dir="auto">SkyCube.cpp</li>
+<li dir="auto">SkyCube.h</li>
+<li dir="auto">SoundCue.cpp</li>
+<li dir="auto">SoundCue.h</li>
+<li dir="auto">SpotLight.cpp</li>
+<li dir="auto">SpotLight.h</li>
+<li dir="auto">SpringCamera.cpp</li>
+<li dir="auto">SpringCamera.h</li>
+<li dir="auto">SpriteRender.cpp</li>
+<li dir="auto">SpriteRender.h</li>
+<li dir="auto">SpriteRenderConstData.h</li>
+<li dir="auto">StopWatch.h</li>
+<li dir="auto">StringActionTargetManager.cpp</li>
+<li dir="auto">StringActionTargetManager.h</li>
+<li dir="auto">SwingTarget.cpp</li>
+<li dir="auto">SwingTarget.h</li>
+<li dir="auto">TestMap.cpp</li>
+<li dir="auto">TestMap.h</li>
+<li dir="auto">TestMapForLevel3D.cpp</li>
+<li dir="auto">TestMapForLevel3D.h</li>
+<li dir="auto">TestMapForPlayerMove.cpp</li>
+<li dir="auto">TestMapForPlayerMove.h</li>
+<li dir="auto">TestMapForSpotLight.cpp</li>
+<li dir="auto">TestMapForSpotLight.h</li>
+<li dir="auto">TextPanelRender.cpp</li>
+<li dir="auto">TextPanelRender.h</li>
+<li dir="auto">TitleMap.cpp</li>
+<li dir="auto">TitleMap.h</li>
+<li dir="auto">TklFile.cpp</li>
+<li dir="auto">TklFile.h</li>
+<li dir="auto">TResourceBank.h</li>
+<li dir="auto">UIConstData.h</li>
+<li dir="auto">Util.h</li>
+<li dir="auto">VectorRender.cpp</li>
+<li dir="auto">VectorRender.h</li>
 </ul>
+<div  dir="auto" ></div>
 </details>
+<div  dir="auto" ></div>
 <details><summary>
 ● シェーダー（fx,h）
 </summary>
-<ul>
-<li>bloom.fx</li>
-<li>DeferredLighting.fx</li>
-<li>DrawShadowMap.fx</li>
-<li>gaussianBlur.fx</li>
-<li>miniMap.fx</li>
-<li>ModelVSCommon.h</li>
-<li>PBRLighting.h</li>
-<li>PointAndSpotLightFunc.h</li>
-<li>RenderToGBufferFor3DModel.fx</li>
-<li>SkyCubeMap.fx</li>
-<li>TranslucentModel.fx</li>
+<ul dir="auto">
+<li dir="auto">bloom.fx</li>
+<li dir="auto">DeferredLighting.fx</li>
+<li dir="auto">DrawShadowMap.fx</li>
+<li dir="auto">gaussianBlur.fx</li>
+<li dir="auto">miniMap.fx</li>
+<li dir="auto">ModelVSCommon.h</li>
+<li dir="auto">PBRLighting.h</li>
+<li dir="auto">PointAndSpotLightFunc.h</li>
+<li dir="auto">RenderToGBufferFor3DModel.fx</li>
+<li dir="auto">SkyCubeMap.fx</li>
+<li dir="auto">TranslucentModel.fx</li>
 </ul>
+<div  dir="auto" ></div>
 </details>
+<div  dir="auto" ></div>
 <!-- 目次へのリンク_ここから -->
+<div  dir="auto" ></div>
 <section class = "goToIndexText">
-<p><a href="#%E7%9B%AE%E6%AC%A1">目次へ</a></p>
+<p dir="auto"><a href="#%E7%9B%AE%E6%AC%A1">目次へ</a></p>
+<div  dir="auto" ></div>
 </section>
 <!-- 目次へのリンク_ここまで -->
-<hr>
-<h1 id="3%E6%94%B9%E9%80%A0%E3%81%97%E3%81%9F%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%B3%E3%82%B3%E3%83%BC%E3%83%89">3.改造したエンジンコード</h1>
+<hr dir="auto">
+<h1 dir="auto" id="3%E6%94%B9%E9%80%A0%E3%81%97%E3%81%9F%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%B3%E3%82%B3%E3%83%BC%E3%83%89">3.改造したエンジンコード</h1>
+<div  dir="auto" ></div>
 <details><summary>
 ● ソースコード（cpp,h）
 </summary>
-<ul>
-<li>stdafx.h
-<ul>
-<li>CommonData.hのインクルードの追加（6行目）</li>
+<ul dir="auto">
+<li dir="auto">stdafx.h
+<ul dir="auto">
+<li dir="auto">CommonData.hのインクルードの追加（6行目）</li>
 </ul>
 </li>
-<li>EffectEngine.cpp
-<ul>
-<li>DXGI_FORMATの変更（16行目）</li>
+<li dir="auto">EffectEngine.cpp
+<ul dir="auto">
+<li dir="auto">DXGI_FORMATの変更（16行目）</li>
 </ul>
 </li>
-<li>CaslFile.cpp
-<ul>
-<li>読み込んだデータと受け取る変数がずれているバグがあったため修正（56行目）</li>
+<li dir="auto">CaslFile.cpp
+<ul dir="auto">
+<li dir="auto">読み込んだデータと受け取る変数がずれているバグがあったため修正（56行目）</li>
 </ul>
 </li>
-<li>Level2D.cpp
-<ul>
-<li>レイヤー番号を受け取るように変更（43行目）</li>
+<li dir="auto">Level2D.cpp
+<ul dir="auto">
+<li dir="auto">レイヤー番号を受け取るように変更（43行目）</li>
 </ul>
 </li>
-<li>Level2D.h
-<ul>
-<li>レイヤー番号用のデータメンバを追加（20行目）</li>
+<li dir="auto">Level2D.h
+<ul dir="auto">
+<li dir="auto">レイヤー番号用のデータメンバを追加（20行目）</li>
 </ul>
 </li>
-<li>Physics.cpp
-<ul>
-<li>コールバック用の構造体の追加（24行目～40行目）</li>
+<li dir="auto">Physics.cpp
+<ul dir="auto">
+<li dir="auto">コールバック用の構造体の追加（24行目～40行目）</li>
 </ul>
 </li>
-<li>Physics.h
-<ul>
-<li>当たり判定用の関数の追加（126行目～135行目）</li>
+<li dir="auto">Physics.h
+<ul dir="auto">
+<li dir="auto">当たり判定用の関数の追加（126行目～135行目）</li>
 </ul>
 </li>
-<li>Animation.h
-<ul>
-<li>配列の-1番目の要素にアクセスするバグがあったため修正（137行目）</li>
-<li>アニメーションの残り時間（比率）を得る関数を追加（207行目～211行目）</li>
+<li dir="auto">Animation.h
+<ul dir="auto">
+<li dir="auto">配列の-1番目の要素にアクセスするバグがあったため修正（137行目）</li>
+<li dir="auto">アニメーションの残り時間（比率）を得る関数を追加（207行目～211行目）</li>
 </ul>
 </li>
-<li>AnimationPlayController.cpp
-<ul>
-<li>アニメーションの残り時間（比率）の計算処理を追加（148行目）</li>
+<li dir="auto">AnimationPlayController.cpp
+<ul dir="auto">
+<li dir="auto">アニメーションの残り時間（比率）の計算処理を追加（148行目）</li>
 </ul>
 </li>
-<li>AnimationPlayController.h
-<ul>
-<li>アニメーションの残り時間（比率）用のデータメンバを追加（143行目）</li>
+<li dir="auto">AnimationPlayController.h
+<ul dir="auto">
+<li dir="auto">アニメーションの残り時間（比率）用のデータメンバを追加（143行目）</li>
 </ul>
 </li>
-<li>FontEngine.cpp
-<ul>
-<li>DXGI_FORMATの変更（30行目）</li>
+<li dir="auto">FontEngine.cpp
+<ul dir="auto">
+<li dir="auto">DXGI_FORMATの変更（30行目）</li>
 </ul>
 </li>
-<li>GraphicsEngine.cpp
-<ul>
-<li>使用するGPUの種類を決める処理で、メモリリークが発生していたため修正（232行目～305行目）</li>
+<li dir="auto">GraphicsEngine.cpp
+<ul dir="auto">
+<li dir="auto">使用するGPUの種類を決める処理で、メモリリークが発生していたため修正（232行目～305行目）</li>
 </ul>
 </li>
-<li>GamePad.cpp
-<ul>
-<li>ゲームパッドのRT（RB2）とLT（LB2）のトリガー判定がプレス判定と同じになっているバグがあったので修正（109行目～115行目）</li>
+<li dir="auto">GamePad.cpp
+<ul dir="auto">
+<li dir="auto">ゲームパッドのRT（RB2）とLT（LB2）のトリガー判定がプレス判定と同じになっているバグがあったので修正（109行目～115行目）</li>
 </ul>
 </li>
-<li>Material.cpp
-<ul>
-<li>固定だったカリング設定を、自由に設定できるように変更（288行目）</li>
-<li>同じテクスチャが使用されている時、リソースを使いまわすように変更（15行目～219行目）</li>
-<li>同じシェーダーが使用されている時、リソースを使いまわすように変更（347行目～393行目）</li>
+<li dir="auto">Material.cpp
+<ul dir="auto">
+<li dir="auto">固定だったカリング設定を、自由に設定できるように変更（288行目）</li>
+<li dir="auto">同じテクスチャが使用されている時、リソースを使いまわすように変更（15行目～219行目）</li>
+<li dir="auto">同じシェーダーが使用されている時、リソースを使いまわすように変更（347行目～393行目）</li>
 </ul>
 </li>
-<li>Material.h
-<ul>
-<li>一部データメンバをポインタに変更（124行目～126行目）</li>
+<li dir="auto">Material.h
+<ul dir="auto">
+<li dir="auto">一部データメンバをポインタに変更（124行目～126行目）</li>
 </ul>
 </li>
-<li>MeshParts.cpp
-<ul>
-<li>定数バッファを配列で指定できるように変更（54行目～60行目、103行目～108行目、229行目～234行目）</li>
-<li>シェーダーリソースビューを配列で指定できるように変更（94行目～99行目）</li>
+<li dir="auto">MeshParts.cpp
+<ul dir="auto">
+<li dir="auto">定数バッファを配列で指定できるように変更（54行目～60行目、103行目～108行目、229行目～234行目）</li>
+<li dir="auto">シェーダーリソースビューを配列で指定できるように変更（94行目～99行目）</li>
 </ul>
 </li>
-<li>MeshParts.h
-<ul>
-<li>共通で使われる定数バッファの中身にパラメータを追加（138行目～139行目）</li>
-<li>共通定数バッファのパラメータの増設に伴い、描画関数の引数も増設（63行目～74行目）</li>
-<li>初期化用関数の引数の変更（45行目～56行目）</li>
+<li dir="auto">MeshParts.h
+<ul dir="auto">
+<li dir="auto">共通で使われる定数バッファの中身にパラメータを追加（138行目～139行目）</li>
+<li dir="auto">共通定数バッファのパラメータの増設に伴い、描画関数の引数も増設（63行目～74行目）</li>
+<li dir="auto">初期化用関数の引数の変更（45行目～56行目）</li>
 </ul>
 </li>
-<li>Model.h
-<ul>
-<li>初期化用データのパラメータを増設（30行目～49行目）</li>
-<li>一部データメンバをポインタに変更（121行目）</li>
+<li dir="auto">Model.h
+<ul dir="auto">
+<li dir="auto">初期化用データのパラメータを増設（30行目～49行目）</li>
+<li dir="auto">一部データメンバをポインタに変更（121行目）</li>
 </ul>
 </li>
-<li>NullTextureMaps.cpp
-<ul>
-<li>ヌルテクスチャのファイルパスを保持する処理を追加（30行目～ 54行目）</li>
+<li dir="auto">NullTextureMaps.cpp
+<ul dir="auto">
+<li dir="auto">ヌルテクスチャのファイルパスを保持する処理を追加（30行目～ 54行目）</li>
 </ul>
 </li>
-<li>NullTextureMaps.h
-<ul>
-<li>ヌルテクスチャのファイルパスを保持するデータメンバの追加と、そのデータメンバのゲッター関数（118行目～161行目）</li>
+<li dir="auto">NullTextureMaps.h
+<ul dir="auto">
+<li dir="auto">ヌルテクスチャのファイルパスを保持するデータメンバの追加と、そのデータメンバのゲッター関数（118行目～161行目）</li>
 </ul>
 </li>
-<li>Sprite.cpp
-<ul>
-<li>固定だったスプライトのアドレッシングモードを、指定できるように変更（225行目～227行目）</li>
-<li>定数バッファを配列で指定できるように変更（94行目～99行目、197行目～208行目、296行目～302行目）</li>
-<li>複数のスプライトのカラーバッファーフォーマットを指定できるように変更（178行目～184行目）</li>
+<li dir="auto">Sprite.cpp
+<ul dir="auto">
+<li dir="auto">固定だったスプライトのアドレッシングモードを、指定できるように変更（225行目～227行目）</li>
+<li dir="auto">定数バッファを配列で指定できるように変更（94行目～99行目、197行目～208行目、296行目～302行目）</li>
+<li dir="auto">複数のスプライトのカラーバッファーフォーマットを指定できるように変更（178行目～184行目）</li>
 </ul>
 </li>
-<li>Sprite.h
-<ul>
-<li>スプライトに設定できる最大テクスチャ数の増設（11行目）</li>
-<li>初期化用データのパラメータの増設（37行目～59行目）</li>
-<li>スプライトのパラメータを変更、取得をするメンバ関数の追加（163行目～217行目）</li>
-<li>一部のデータメンバをポインタに変更（221行目～223行目）</li>
+<li dir="auto">Sprite.h
+<ul dir="auto">
+<li dir="auto">スプライトに設定できる最大テクスチャ数の増設（11行目）</li>
+<li dir="auto">初期化用データのパラメータの増設（37行目～59行目）</li>
+<li dir="auto">スプライトのパラメータを変更、取得をするメンバ関数の追加（163行目～217行目）</li>
+<li dir="auto">一部のデータメンバをポインタに変更（221行目～223行目）</li>
 </ul>
 </li>
-<li>Texture.cpp
-<ul>
-<li>キューブマップ用のテクスチャにも対応するように変更（78行目～88行目、109行目～118行目）</li>
+<li dir="auto">Texture.cpp
+<ul dir="auto">
+<li dir="auto">キューブマップ用のテクスチャにも対応するように変更（78行目～88行目、109行目～118行目）</li>
 </ul>
 </li>
-<li>TkmFile.cpp
-<ul>
-<li>同じddsファイルが使用される時、リソースを使いまわすように変更（240行目～265行目）</li>
+<li dir="auto">TkmFile.cpp
+<ul dir="auto">
+<li dir="auto">同じddsファイルが使用される時、リソースを使いまわすように変更（240行目～265行目）</li>
 </ul>
 </li>
-<li>TkmFile.h
-<ul>
-<li>マテリアルに、テクスチャのファイルパスを保持し続けるように変更（41行目～45行目）</li>
+<li dir="auto">TkmFile.h
+<ul dir="auto">
+<li dir="auto">マテリアルに、テクスチャのファイルパスを保持し続けるように変更（41行目～45行目）</li>
 </ul>
 </li>
 </ul>
+<div  dir="auto" ></div>
 </details>
+<div  dir="auto" ></div>
 <!-- 目次へのリンク_ここから -->
+<div  dir="auto" ></div>
 <section class = "goToIndexText">
-<p><a href="#%E7%9B%AE%E6%AC%A1">目次へ</a></p>
+<p dir="auto"><a href="#%E7%9B%AE%E6%AC%A1">目次へ</a></p>
+<div  dir="auto" ></div>
 </section>
 <!-- 目次へのリンク_ここまで -->
-<hr>
-<h1 id="4%E3%82%B2%E3%83%BC%E3%83%A0%E5%86%85%E5%AE%B9">4.ゲーム内容</h1>
-<p> 街中を自由にスイングで飛び回れる、3Dスイングアクションゲーム。<br>
+<hr dir="auto">
+<h1 dir="auto" id="4%E3%82%B2%E3%83%BC%E3%83%A0%E5%86%85%E5%AE%B9">4.ゲーム内容</h1>
+<p dir="auto"> 街中を自由にスイングで飛び回れる、3Dスイングアクションゲーム。<br>
 危険走行をする暴走車を、スイングで追いかけて捕まえろ！</p>
-<p><br><!-- ゲームのイメージ画像 -->
+<p dir="auto"><br><!-- ゲームのイメージ画像 -->
 <img src = images/gameImage.jpg class = normalImage>
 <br></p>
+<div  dir="auto" ></div>
 <!-- 目次へのリンク_ここから -->
+<div  dir="auto" ></div>
 <section class = "goToIndexText">
-<p><a href="#%E7%9B%AE%E6%AC%A1">目次へ</a></p>
+<p dir="auto"><a href="#%E7%9B%AE%E6%AC%A1">目次へ</a></p>
+<div  dir="auto" ></div>
 </section>
 <!-- 目次へのリンク_ここまで -->
-<hr>
-<h1 id="5%E6%93%8D%E4%BD%9C%E8%AA%AC%E6%98%8E">5.操作説明</h1>
-<ul>
-<li>Aボタン：ジャンプ</li>
-<li>Yボタン：（車の近くで）車の上に乗る</li>
-<li>RT（R2ボタン）：（地上で）ダッシュ、（空中で）スイング</li>
-<li>左スティック：移動</li>
-<li>右スティック：カメラ回転</li>
-<li>右スティック→押し込み：敵探知</li>
-<li>STARTボタン：ミッション確認</li>
+<hr dir="auto">
+<h1 dir="auto" id="5%E6%93%8D%E4%BD%9C%E8%AA%AC%E6%98%8E">5.操作説明</h1>
+<ul dir="auto">
+<li dir="auto">Aボタン：ジャンプ</li>
+<li dir="auto">Yボタン：（車の近くで）車の上に乗る</li>
+<li dir="auto">RT（R2ボタン）：（地上で）ダッシュ、（空中で）スイング</li>
+<li dir="auto">左スティック：移動</li>
+<li dir="auto">右スティック：カメラ回転</li>
+<li dir="auto">右スティック→押し込み：敵探知</li>
+<li dir="auto">STARTボタン：ミッション確認</li>
 </ul>
-<p><br><!-- 操作説明の画像 -->
+<p dir="auto"><br><!-- 操作説明の画像 -->
 <img src = images/Instructions.jpg class = normalImage>
 <br></p>
+<div  dir="auto" ></div>
 <!-- 目次へのリンク_ここから -->
+<div  dir="auto" ></div>
 <section class = "goToIndexText">
-<p><a href="#%E7%9B%AE%E6%AC%A1">目次へ</a></p>
+<p dir="auto"><a href="#%E7%9B%AE%E6%AC%A1">目次へ</a></p>
+<div  dir="auto" ></div>
 </section>
 <!-- 目次へのリンク_ここまで -->
-<hr>
-<h1 id="6%E6%8A%80%E8%A1%93%E7%B4%B9%E4%BB%8B">6.技術紹介</h1>
-<h2 id="61%E3%82%B9%E3%82%A4%E3%83%B3%E3%82%B0%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6">6.1.スイングについて</h2>
-<p> このゲームのスイングアクションは、プレイヤーが鎖を射出し、鎖の先端がビルに引っ付き、そこを中心に振り子のような動きのスイングアクションで移動する。このスイングアクションは以下のような流れで実行している。</p>
-<ol>
-<li>ビルの鎖の射出先の候補地（以降<strong>スイングターゲット</strong>）の位置を計算する。</li>
-<li>鎖が射出するスイングターゲットを探す。</li>
-<li>スイングターゲットに向かって、鎖を射出する。鎖がスイングターゲットまで届いたらスイング開始。</li>
-<li>進む方向の上下の角度を求める。</li>
-<li>進むスピードを求める。</li>
-<li>スイング中の左右の方向転換を計算する。</li>
-<li>プレイヤーに移動速度を加算する。</li>
+<hr dir="auto">
+<h1 dir="auto" id="6%E6%8A%80%E8%A1%93%E7%B4%B9%E4%BB%8B">6.技術紹介</h1>
+<h2 dir="auto" id="61%E3%82%B9%E3%82%A4%E3%83%B3%E3%82%B0%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6">6.1.スイングについて</h2>
+<p dir="auto"> このゲームのスイングアクションは、プレイヤーが鎖を射出し、鎖の先端がビルに引っ付き、そこを中心に振り子のような動きのスイングアクションで移動する。このスイングアクションは以下のような流れで実行している。</p>
+<ol dir="auto">
+<li dir="auto">ビルの鎖の射出先の候補地（以降<strong>スイングターゲット</strong>）の位置を計算する。</li>
+<li dir="auto">鎖が射出するスイングターゲットを探す。</li>
+<li dir="auto">スイングターゲットに向かって、鎖を射出する。鎖がスイングターゲットまで届いたらスイング開始。</li>
+<li dir="auto">進む方向の上下の角度を求める。</li>
+<li dir="auto">進むスピードを求める。</li>
+<li dir="auto">スイング中の左右の方向転換を計算する。</li>
+<li dir="auto">プレイヤーに移動速度を加算する。</li>
 </ol>
-<p> それぞれの手順を詳しく見ていく。</p>
-<ol>
-<li>
-<p><strong>ビルのスイングターゲットの位置を計算する</strong></p>
-<ol>
-<li>
-<p>ビルのモデルデータをもとにAABBを作成する。まずは、モデルの頂点データを1つずつ調べ、最大座標と最小座標を求める。</p>
+<p dir="auto"> それぞれの手順を詳しく見ていく。</p>
+<ol dir="auto">
+<li dir="auto">
+<p dir="auto"><strong>ビルのスイングターゲットの位置を計算する</strong></p>
+<ol dir="auto">
+<li dir="auto">
+<p dir="auto">ビルのモデルデータをもとにAABBを作成する。まずは、モデルの頂点データを1つずつ調べ、最大座標と最小座標を求める。</p>
 </li>
-<li>
-<p>( 最大座標 - 最小座標 ) × 0.5f を計算してAABBの半分のサイズを求める。</p>
+<li dir="auto">
+<p dir="auto">( 最大座標 - 最小座標 ) × 0.5f を計算してAABBの半分のサイズを求める。</p>
 </li>
-<li>
-<p>( 最大座標 + 最小座標 ) × 0.5f を計算してAABBのセンターポジションを求める。</p>
+<li dir="auto">
+<p dir="auto">( 最大座標 + 最小座標 ) × 0.5f を計算してAABBのセンターポジションを求める。</p>
 </li>
-<li>
-<p>AABBのセンターポジションと半分のサイズから、AABBの8頂点を求める。</p>
+<li dir="auto">
+<p dir="auto">AABBのセンターポジションと半分のサイズから、AABBの8頂点を求める。</p>
 </li>
-<li>
-<p>4.で求めたAABBは、まだ、オブジェクト座標系のAABBのため、ビルのワールド行列をAABBに乗算して、ワールド座標系のAABBを求める。</p>
+<li dir="auto">
+<p dir="auto">4.で求めたAABBは、まだ、オブジェクト座標系のAABBのため、ビルのワールド行列をAABBに乗算して、ワールド座標系のAABBを求める。</p>
 </li>
-<li>
-<p>このAABBの側面にスイングターゲットを等間隔で配置する。この時、一定以下の高さはスイング出来ないので、除外する。</p>
-<p><br><!-- スイングの画像 -->
+<li dir="auto">
+<p dir="auto">このAABBの側面にスイングターゲットを等間隔で配置する。この時、一定以下の高さはスイング出来ないので、除外する。</p>
+<p dir="auto"><br><!-- スイングの画像 -->
 <img src = images/swing1.jpg class = normalImage>
 <br></p>
 </li>
 </ol>
 </li>
-<li>
-<p><strong>鎖が射出するスイングターゲットを探す</strong></p>
-<ol>
-<li>
-<p>まず、スイングで進む方向を決める。移動入力があったらその方向に、無かったらカメラの前方向がスイングで進む方向になる。</p>
+<li dir="auto">
+<p dir="auto"><strong>鎖が射出するスイングターゲットを探す</strong></p>
+<ol dir="auto">
+<li dir="auto">
+<p dir="auto">まず、スイングで進む方向を決める。移動入力があったらその方向に、無かったらカメラの前方向がスイングで進む方向になる。</p>
 </li>
-<li>
-<p>プレイヤーの座標から、スイングで進む方向に一定距離先の座標を基点に、有効範囲内にあって一番近いスイングターゲットを探し出す。この時、進む方向ベクトルと、プレイヤー座標からスイングターゲットへの方向ベクトルの内積が負になるスイングターゲットは候補から除外する。つまり、進む方向と逆方向のスイングターゲットは選ばないようにする。</p>
-<p>▽上から見たスイングターゲットを探す処理
+<li dir="auto">
+<p dir="auto">プレイヤーの座標から、スイングで進む方向に一定距離先の座標を基点に、有効範囲内にあって一番近いスイングターゲットを探し出す。この時、進む方向ベクトルと、プレイヤー座標からスイングターゲットへの方向ベクトルの内積が負になるスイングターゲットは候補から除外する。つまり、進む方向と逆方向のスイングターゲットは選ばないようにする。</p>
+<p dir="auto">▽上から見たスイングターゲットを探す処理
 <br><!-- スイングの画像 -->
 <img src = images/swing2.jpg class = normalImage>
 <br></p>
 </li>
 </ol>
 </li>
-<li>
-<p><strong>スイングターゲットに向かって、鎖を射出する。鎖がスイングターゲットまで届いたらスイング開始</strong></p>
-<ol>
-<li>
-<p>選んだスイングターゲットに向かって鎖を射出する。</p>
+<li dir="auto">
+<p dir="auto"><strong>スイングターゲットに向かって、鎖を射出する。鎖がスイングターゲットまで届いたらスイング開始</strong></p>
+<ol dir="auto">
+<li dir="auto">
+<p dir="auto">選んだスイングターゲットに向かって鎖を射出する。</p>
 </li>
-<li>
-<p>プレイヤーの座標からスイングターゲットの座標へ線形補完を行い、補間率を挙げていくことによって鎖を伸ばしていく。そのため、プレイヤーとスイングターゲットの間の距離に関係なく一定の時間で伸びきる。</p>
+<li dir="auto">
+<p dir="auto">プレイヤーの座標からスイングターゲットの座標へ線形補完を行い、補間率を挙げていくことによって鎖を伸ばしていく。そのため、プレイヤーとスイングターゲットの間の距離に関係なく一定の時間で伸びきる。</p>
 </li>
-<li>
-<p>鎖のモデルを拡大させてスイングターゲットまで伸ばしてしまうと、ゴムのように伸びた鎖のモデルになってしまう。それを防ぐために、鎖のモデルを2つ用意する。1つ目のモデルは手元から伸ばしていき、等倍まで伸びたら先端から2つ目の鎖のモデルの伸ばし始める。2つ目のモデルはそのままスイングターゲットまで伸ばす。こうすることで、カメラに映っている手元の鎖のモデルは正常な倍率で表示さる。2つ目のモデルはあまりカメラに映らないため、伸びていても目立たない。</p>
+<li dir="auto">
+<p dir="auto">鎖のモデルを拡大させてスイングターゲットまで伸ばしてしまうと、ゴムのように伸びた鎖のモデルになってしまう。それを防ぐために、鎖のモデルを2つ用意する。1つ目のモデルは手元から伸ばしていき、等倍まで伸びたら先端から2つ目の鎖のモデルの伸ばし始める。2つ目のモデルはそのままスイングターゲットまで伸ばす。こうすることで、カメラに映っている手元の鎖のモデルは正常な倍率で表示さる。2つ目のモデルはあまりカメラに映らないため、伸びていても目立たない。</p>
 </li>
-<li>
-<p>鎖がスイングターゲットまで伸びきったら、スイングを開始する。</p>
-<p><br><!-- スイングの画像 -->
+<li dir="auto">
+<p dir="auto">鎖がスイングターゲットまで伸びきったら、スイングを開始する。</p>
+<p dir="auto"><br><!-- スイングの画像 -->
 <img src = images/swing3.jpg class = normalImage>
 <br></p>
 </li>
 </ol>
 </li>
-<li>
-<p><strong>進む方向の上下の角度を求める</strong></p>
-<ol>
-<li>
-<p>スイング中の動きを計算していく。振り子のような動きで前の進むため、上下の動きがある。まずはその上下の角度を求める。</p>
+<li dir="auto">
+<p dir="auto"><strong>進む方向の上下の角度を求める</strong></p>
+<ol dir="auto">
+<li dir="auto">
+<p dir="auto">スイング中の動きを計算していく。振り子のような動きで前の進むため、上下の動きがある。まずはその上下の角度を求める。</p>
 </li>
-<li>
-<p>最初にプレイヤーの座標からスイングターゲットまでのベクトルを求めて、そのベクトルのY成分を消す。これで<strong>XZ平面でのプレイヤーからスイングターゲットへのベクトル</strong>が求まる。</p>
+<li dir="auto">
+<p dir="auto">最初にプレイヤーの座標からスイングターゲットまでのベクトルを求めて、そのベクトルのY成分を消す。これで<strong>XZ平面でのプレイヤーからスイングターゲットへのベクトル</strong>が求まる。</p>
 </li>
-<li>
-<p>次に、「鎖が射出するスイングターゲットを探す」ときに求めたスイングで進む方向、これを<strong>XZ平面での前方向ベクトル</strong>とする。</p>
-<p><br><!-- スイングの画像 -->
+<li dir="auto">
+<p dir="auto">次に、「鎖が射出するスイングターゲットを探す」ときに求めたスイングで進む方向、これを<strong>XZ平面での前方向ベクトル</strong>とする。</p>
+<p dir="auto"><br><!-- スイングの画像 -->
 <img src = images/swing4.jpg class = normalImage>
 <br></p>
 </li>
-<li>
-<p><strong>XZ平面での前方向ベクトル</strong>に内積を使って<strong>XZ平面でのプレイヤーからスイングターゲットへのベクトル</strong>を射影する。</p>
-<p><br><!-- スイングの画像 -->
+<li dir="auto">
+<p dir="auto"><strong>XZ平面での前方向ベクトル</strong>に内積を使って<strong>XZ平面でのプレイヤーからスイングターゲットへのベクトル</strong>を射影する。</p>
+<p dir="auto"><br><!-- スイングの画像 -->
 <img src = images/swing5.jpg class = normalImage>
 <br></p>
 </li>
-<li>
-<p><strong>XZ平面での前方向ベクトル</strong>に射影して求めた長さを乗算して、<strong>XZ平面でのプレイヤーからスイングターゲットへのベクトル</strong>を、<strong>XZ平面での前方向ベクトル</strong>に射影したベクトルが求まる。</p>
+<li dir="auto">
+<p dir="auto"><strong>XZ平面での前方向ベクトル</strong>に射影して求めた長さを乗算して、<strong>XZ平面でのプレイヤーからスイングターゲットへのベクトル</strong>を、<strong>XZ平面での前方向ベクトル</strong>に射影したベクトルが求まる。</p>
 </li>
-<li>
-<p>プレイヤーの座標に 5. で求めたベクトルを加算すると<strong>XZ平面でのスイングターゲットをプレイヤーの前方向に直交するように移動させた座標</strong>が求まる。</p>
-<p><br><!-- スイングの画像 -->
+<li dir="auto">
+<p dir="auto">プレイヤーの座標に 5. で求めたベクトルを加算すると<strong>XZ平面でのスイングターゲットをプレイヤーの前方向に直交するように移動させた座標</strong>が求まる。</p>
+<p dir="auto"><br><!-- スイングの画像 -->
 <img src = images/swing6.jpg class = normalImage>
 <br></p>
 </li>
-<li>
-<p>6.の座標のY座標をスイングターゲットのY座標と同じにする。これでスイングターゲットをプレイヤーの前方向までずらした座標が求まる。この座標を振り子の支点に見立てて移動させる。プレイヤーの前方向にずらしたため、真っ直ぐ前に振り子運動をする。本来ならそのままのスイングターゲットの座標を支点とするのが正しいが、プレイヤーの操作性やスイングの爽快感を出すために、プレイヤーの前方向までずらしている。</p>
-<p><br><!-- スイングの画像 -->
+<li dir="auto">
+<p dir="auto">6.の座標のY座標をスイングターゲットのY座標と同じにする。これでスイングターゲットをプレイヤーの前方向までずらした座標が求まる。この座標を振り子の支点に見立てて移動させる。プレイヤーの前方向にずらしたため、真っ直ぐ前に振り子運動をする。本来ならそのままのスイングターゲットの座標を支点とするのが正しいが、プレイヤーの操作性やスイングの爽快感を出すために、プレイヤーの前方向までずらしている。</p>
+<p dir="auto"><br><!-- スイングの画像 -->
 <img src = images/swing7.jpg class = normalImage>
 <br></p>
 </li>
-<li>
-<p><strong>前方向にずらしたスイングターゲットからプレイヤーへの方向ベクトル</strong>を求め、<strong>XZ平面での前方向ベクトル</strong>と内積をとる。</p>
+<li dir="auto">
+<p dir="auto"><strong>前方向にずらしたスイングターゲットからプレイヤーへの方向ベクトル</strong>を求め、<strong>XZ平面での前方向ベクトル</strong>と内積をとる。</p>
 </li>
-<li>
-<p>内積が負なら、プレイヤーはスイングターゲットより手前におり、正ならスイングターゲットより奥にいる。手前の時と奥の時で処理を変える。</p>
-<p><br><!-- スイングの画像 -->
+<li dir="auto">
+<p dir="auto">内積が負なら、プレイヤーはスイングターゲットより手前におり、正ならスイングターゲットより奥にいる。手前の時と奥の時で処理を変える。</p>
+<p dir="auto"><br><!-- スイングの画像 -->
 <img src = images/swing9.jpg class = normalImage>
 <br></p>
 </li>
-<li>
-<p>手前にいるときの処理は、<strong>XZ平面での前方向ベクトル</strong>を下に回転させる。下向きに回転させるために回転軸を求める。<strong>上方向のベクトル</strong>と<strong>XZ平面での前方向ベクトル</strong>の外積を求め、上下の回転に必要な<strong>横方向ベクトル</strong>が求まる。
+<li dir="auto">
+<p dir="auto">手前にいるときの処理は、<strong>XZ平面での前方向ベクトル</strong>を下に回転させる。下向きに回転させるために回転軸を求める。<strong>上方向のベクトル</strong>と<strong>XZ平面での前方向ベクトル</strong>の外積を求め、上下の回転に必要な<strong>横方向ベクトル</strong>が求まる。
 <br><!-- スイングの画像 -->
 <img src = images/swing9.jpg class = normalImage>
 <br></p>
 </li>
-<li>
-<p>次に回転量を求める。回転量は8.で求めた内積の数値に応じて決める。8.の内積は-1.0f～0.0fの値をとり、-1.0fの時は回転量0度、-0.5fのときは回転量90度、0.0fの時は回転量0度になるような二次関数の式で変化させる。これで最初は真っ直ぐ進み、だんだん下方向へ進むようになって、また真っ直ぐに戻っていくとう変化になる。</p>
+<li dir="auto">
+<p dir="auto">次に回転量を求める。回転量は8.で求めた内積の数値に応じて決める。8.の内積は-1.0f～0.0fの値をとり、-1.0fの時は回転量0度、-0.5fのときは回転量90度、0.0fの時は回転量0度になるような二次関数の式で変化させる。これで最初は真っ直ぐ進み、だんだん下方向へ進むようになって、また真っ直ぐに戻っていくとう変化になる。</p>
 </li>
-<li>
-<p>式は、y = -4(X + 0.5)^2 + 1.0となり、xに内積を入れる。するとyの値が0.0-&gt;1.0-&gt;0.0と変化する。そして回転量90度にyの値をかける。</p>
+<li dir="auto">
+<p dir="auto">式は、y = -4(X + 0.5)^2 + 1.0となり、xに内積を入れる。するとyの値が0.0-&gt;1.0-&gt;0.0と変化する。そして回転量90度にyの値をかける。</p>
 </li>
-<li>
-<p><strong>XZ平面での前方向ベクトル</strong>を10.で求めた<strong>横方向ベクトル</strong>を軸中心に、12.で求めた回転量だけ回転させ、上下の角度を決める。
+<li dir="auto">
+<p dir="auto"><strong>XZ平面での前方向ベクトル</strong>を10.で求めた<strong>横方向ベクトル</strong>を軸中心に、12.で求めた回転量だけ回転させ、上下の角度を決める。
 <br><!-- スイングの画像 -->
 <img src = images/swing10.jpg class = normalImage>
 <br></p>
 </li>
-<li>
-<p>9.の時に内積が正のとき処理は<strong>前方向にずらしたスイングターゲットからプレイヤーへの方向ベクトル</strong>を<strong>横方向ベクトル</strong>で90度回転させたベクトルの方向に進む。
+<li dir="auto">
+<p dir="auto">9.の時に内積が正のとき処理は<strong>前方向にずらしたスイングターゲットからプレイヤーへの方向ベクトル</strong>を<strong>横方向ベクトル</strong>で90度回転させたベクトルの方向に進む。
 <br><!-- スイングの画像 -->
 <img src = images/swing11.jpg class = normalImage>
 <br></p>
 </li>
 </ol>
 </li>
-<li>
-<p><strong>進むスピードを求める</strong></p>
-<ol>
-<li>
-<p>スイングのスピードは、任意の位置での振り子の速度の公式を使用。<br>
-$
-g = 重力加速度\
-l = 振り子の長さ\
-v任 = 任意の場所での振り子の速度\
-\cos\theta任 = 任意の場所の角度\
-\cos\theta上 = 一番上の時の角度\
-V任 = \sqrt{2lg}(\cos\theta任 - \cos\theta上)
-$</p>
-</li>
-<li>
-<p>cosΘ任には、<strong>前方向にずらしたスイングターゲットからプレイヤーへの方向ベクトル</strong>と<strong>下方向ベクトル</strong>の内積が入る。</p>
-</li>
-<li>
-<p>cosΘ上には、一番上の時の角度は90度のため0.0が入る。</p>
-</li>
-<li>
-<p>gに重力加速度、lに振り子の長さ（鎖の長さ）を入れる。</p>
-</li>
-<li>
-<p>ここで、<strong>前方向にずらしたスイングターゲットからプレイヤーへの方向ベクトル</strong>と<strong>XZ平面での前方向ベクトル</strong>と内積をとって、プレイヤーがスイングターゲットより手前側にいた場合と奥側にいた場合で処理をわける。</p>
-</li>
-<li>
-<p>手前側にいた場合、任意の位置での振り子の速度の公式の、角度による減速を行わない。そのため√2lgのみ行う。</p>
-</li>
-<li>
-<p>奥側にいた場合、任意の位置での振り子の速度の公式の、すべての計算を行う。上に行けば行くほど減速していく。</p>
-</li>
-</ol>
-</li>
-<li>
-<p>スイング中の左右の方向転換を計算する</p>
-<ol>
-<li>左右の移動入力があれば、カメラの左右方向に力を加える。</li>
-<li>力が加わって急に方向が変わり過ぎないように、現在の左右への方向転換量と目標の方向転換量を線形補完を行って緩やかに変化するようにしている。</li>
-</ol>
-</li>
-<li>
-<p>プレイヤーに移動速度を加算する</p>
-<ol>
-<li>これまで計算したスイングの移動ベクトルをプレイヤーに加算する。</li>
-<li>プレイヤーの移動速度が速くなり過ぎないように、速度制限を付ける。</li>
+<li dir="auto">
+<p dir="auto"><strong>進むスピードを求める</strong></p>
+<ol dir="auto">
+<li dir="auto">スイングのスピードは、任意の位置での振り子の速度の公式を使用。<br></li>
 </ol>
 </li>
 </ol>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi><mo>=</mo><mtext>重力加速度</mtext><mspace linebreak="newline"></mspace><mi>l</mi><mo>=</mo><mtext>振り子の長さ</mtext><mspace linebreak="newline"></mspace><mi>v</mi><mtext>任</mtext><mo>=</mo><mtext>任意の場所での振り子の速度</mtext><mspace linebreak="newline"></mspace><mi>cos</mi><mo>⁡</mo><mi>θ</mi><mtext>任</mtext><mo>=</mo><mtext>任意の場所の角度</mtext><mspace linebreak="newline"></mspace><mi>cos</mi><mo>⁡</mo><mi>θ</mi><mtext>上</mtext><mo>=</mo><mtext>一番上の時の角度</mtext><mspace linebreak="newline"></mspace><mi>V</mi><mtext>任</mtext><mo>=</mo><msqrt><mrow><mn>2</mn><mi>l</mi><mi>g</mi></mrow></msqrt><mo stretchy="false">(</mo><mi>cos</mi><mo>⁡</mo><mi>θ</mi><mtext>任</mtext><mo>−</mo><mi>cos</mi><mo>⁡</mo><mi>θ</mi><mtext>上</mtext><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">
+ g = 重力加速度\\
+ l = 振り子の長さ\\
+ v任 = 任意の場所での振り子の速度\\
+ \cos\theta任 = 任意の場所の角度\\
+ \cos\theta上 = 一番上の時の角度\\
+ V任 = \sqrt{2lg}(\cos\theta任 - \cos\theta上)
+ </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord cjk_fallback">重</span><span class="mord cjk_fallback">力</span><span class="mord cjk_fallback">加</span><span class="mord cjk_fallback">速</span><span class="mord cjk_fallback">度</span></span><span class="mspace newline"></span><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord cjk_fallback">振</span><span class="mord cjk_fallback">り</span><span class="mord cjk_fallback">子</span><span class="mord cjk_fallback">の</span><span class="mord cjk_fallback">長</span><span class="mord cjk_fallback">さ</span></span><span class="mspace newline"></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">v</span><span class="mord cjk_fallback">任</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord cjk_fallback">任</span><span class="mord cjk_fallback">意</span><span class="mord cjk_fallback">の</span><span class="mord cjk_fallback">場</span><span class="mord cjk_fallback">所</span><span class="mord cjk_fallback">で</span><span class="mord cjk_fallback">の</span><span class="mord cjk_fallback">振</span><span class="mord cjk_fallback">り</span><span class="mord cjk_fallback">子</span><span class="mord cjk_fallback">の</span><span class="mord cjk_fallback">速</span><span class="mord cjk_fallback">度</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span></span><span class="mspace newline"></span><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mop">cos</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">θ</span><span class="mord cjk_fallback">任</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord cjk_fallback">任</span><span class="mord cjk_fallback">意</span><span class="mord cjk_fallback">の</span><span class="mord cjk_fallback">場</span><span class="mord cjk_fallback">所</span><span class="mord cjk_fallback">の</span><span class="mord cjk_fallback">角</span><span class="mord cjk_fallback">度</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span></span><span class="mspace newline"></span><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mop">cos</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">θ</span><span class="mord cjk_fallback">上</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord cjk_fallback">一</span><span class="mord cjk_fallback">番</span><span class="mord cjk_fallback">上</span><span class="mord cjk_fallback">の</span><span class="mord cjk_fallback">時</span><span class="mord cjk_fallback">の</span><span class="mord cjk_fallback">角</span><span class="mord cjk_fallback">度</span></span><span class="mspace newline"></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.22222em;">V</span><span class="mord cjk_fallback">任</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.24em;vertical-align:-0.25612499999999994em;"></span><span class="mord sqrt"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.983875em;"><span class="svg-align" style="top:-3.2em;"><span class="pstrut" style="height:3.2em;"></span><span class="mord" style="padding-left:1em;"><span class="mord">2</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span></span></span><span style="top:-2.9438750000000002em;"><span class="pstrut" style="height:3.2em;"></span><span class="hide-tail" style="min-width:1.02em;height:1.28em;"><svg width='400em' height='1.28em' viewBox='0 0 400000 1296' preserveAspectRatio='xMinYMin slice'><path d='M263,681c0.7,0,18,39.7,52,119
+c34,79.3,68.167,158.7,102.5,238c34.3,79.3,51.8,119.3,52.5,120
+c340,-704.7,510.7,-1060.3,512,-1067
+l0 -0
+c4.7,-7.3,11,-11,19,-11
+H40000v40H1012.3
+s-271.3,567,-271.3,567c-38.7,80.7,-84,175,-136,283c-52,108,-89.167,185.3,-111.5,232
+c-22.3,46.7,-33.8,70.3,-34.5,71c-4.7,4.7,-12.3,7,-23,7s-12,-1,-12,-1
+s-109,-253,-109,-253c-72.7,-168,-109.3,-252,-110,-252c-10.7,8,-22,16.7,-34,26
+c-22,17.3,-33.3,26,-34,26s-26,-26,-26,-26s76,-59,76,-59s76,-60,76,-60z
+M1001 80h400000v40h-400000z'/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.25612499999999994em;"><span></span></span></span></span></span><span class="mopen">(</span><span class="mop">cos</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">θ</span><span class="mord cjk_fallback">任</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mop">cos</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">θ</span><span class="mord cjk_fallback">上</span><span class="mclose">)</span></span></span></span></span></p>
+</math>
+<ol start="2" dir="auto">
+<li dir="auto">
+<p dir="auto">cosΘ任には、<strong>前方向にずらしたスイングターゲットからプレイヤーへの方向ベクトル</strong>と<strong>下方向ベクトル</strong>の内積が入る。</p>
+</li>
+<li dir="auto">
+<p dir="auto">cosΘ上には、一番上の時の角度は90度のため0.0が入る。</p>
+</li>
+<li dir="auto">
+<p dir="auto">gに重力加速度、lに振り子の長さ（鎖の長さ）を入れる。</p>
+</li>
+<li dir="auto">
+<p dir="auto">ここで、<strong>前方向にずらしたスイングターゲットからプレイヤーへの方向ベクトル</strong>と<strong>XZ平面での前方向ベクトル</strong>と内積をとって、プレイヤーがスイングターゲットより手前側にいた場合と奥側にいた場合で処理をわける。</p>
+</li>
+<li dir="auto">
+<p dir="auto">手前側にいた場合、任意の位置での振り子の速度の公式の、角度による減速を行わない。そのため√2lgのみ行う。</p>
+</li>
+<li dir="auto">
+<p dir="auto">奥側にいた場合、任意の位置での振り子の速度の公式の、すべての計算を行う。上に行けば行くほど減速していく。</p>
+</li>
+<li dir="auto">
+<p dir="auto">スイング中の左右の方向転換を計算する</p>
+<ol dir="auto">
+<li dir="auto">左右の移動入力があれば、カメラの左右方向に力を加える。</li>
+<li dir="auto">力が加わって急に方向が変わり過ぎないように、現在の左右への方向転換量と目標の方向転換量を線形補完を行って緩やかに変化するようにしている。</li>
+</ol>
+</li>
+<li dir="auto">
+<p dir="auto">プレイヤーに移動速度を加算する</p>
+<ol dir="auto">
+<li dir="auto">これまで計算したスイングの移動ベクトルをプレイヤーに加算する。</li>
+<li dir="auto">プレイヤーの移動速度が速くなり過ぎないように、速度制限を付ける。</li>
+</ol>
+</li>
+</ol>
+<div  dir="auto" ></div>
 <!-- 目次へのリンク_ここから -->
+<div  dir="auto" ></div>
 <section class = "goToIndexText">
-<p><a href="#%E7%9B%AE%E6%AC%A1">目次へ</a></p>
+<p dir="auto"><a href="#%E7%9B%AE%E6%AC%A1">目次へ</a></p>
+<div  dir="auto" ></div>
 </section>
 <!-- 目次へのリンク_ここまで -->
+<div  dir="auto" ></div>
 <!-- ## 6.2.カスケードシャドウ
 &emsp;hogehoge -->
+<div  dir="auto" ></div>
 <!-- 目次へのリンク_ここから -->
+<div  dir="auto" ></div>
 <!-- <section class = "goToIndexText">
 
 [目次へ](#目次)
 </section> -->
+<div  dir="auto" ></div>
 <!-- 目次へのリンク_ここまで -->
+<div  dir="auto" ></div>
 <!-- ## 6.3.EVSM
 &emsp;hogehoge -->
+<div  dir="auto" ></div>
 <!-- 目次へのリンク_ここから -->
+<div  dir="auto" ></div>
 <!-- <section class = "goToIndexText">
 
 [目次へ](#目次)
 </section> -->
+<div  dir="auto" ></div>
 <!-- 目次へのリンク_ここまで -->
+<div  dir="auto" ></div>
 <!-- ## 6.4.PBR
 &emsp;hogehoge -->
+<div  dir="auto" ></div>
 <!-- 目次へのリンク_ここから -->
+<div  dir="auto" ></div>
 <!-- <section class = "goToIndexText">
 
 [目次へ](#目次)
 </section> -->
+<div  dir="auto" ></div>
 <!-- 目次へのリンク_ここまで -->
-<h2 id="62%E3%82%A4%E3%83%B3%E3%82%B9%E3%82%BF%E3%83%B3%E3%82%B7%E3%83%B3%E3%82%B0%E6%8F%8F%E7%94%BB">6.2.インスタンシング描画</h2>
-<p> インスタンシング描画とは、同じモデルを複数表示するときに、本来表示する数だけドローコールを呼ばなければいけないところを、1回のドローコールだけで実現できる技術である。ドローコールを減らすことでCPUのパフォーマンスを向上できる。</p>
+<h2 dir="auto" id="62%E3%82%A4%E3%83%B3%E3%82%B9%E3%82%BF%E3%83%B3%E3%82%B7%E3%83%B3%E3%82%B0%E6%8F%8F%E7%94%BB">6.2.インスタンシング描画</h2>
+<p dir="auto"> インスタンシング描画とは、同じモデルを複数表示するときに、本来表示する数だけドローコールを呼ばなければいけないところを、1回のドローコールだけで実現できる技術である。ドローコールを減らすことでCPUのパフォーマンスを向上できる。</p>
+<div  dir="auto" ></div>
 <section class = "box27">
 <span class = "box-title">POINT</span>
 インスタンシング描画はGPUのパフォーマンスを向上してくれるのではなく、CPUのパフォーマンスを向上してくれるものである。<br>
 ドローコールを削減しても、結局GPUで計算する頂点数やライティングの量は変わらないためである。
 </section>
-<p><br><!-- インスタンシング描画の説明の画像 -->
+<p dir="auto"><br><!-- インスタンシング描画の説明の画像 -->
 <img src = images/instancing1.jpg class = normalImage>
 <br></p>
-<p> インスタンシング描画の手順は以下の通りである。</p>
-<ol>
-<li>（ここからCPU側の処理）ワールド行列の配列の用意し、ワールド行列の配列をGPUのシェーダーリソースビューに渡す。この時、配列のはずは動的のため、定数バッファではなくストラクチャードバッファを使用する。</li>
-<li>ワールド行列の配列を更新する。</li>
-<li>ワールド配列の配列を使用し、ストラクチャードバッファを更新する</li>
-<li>表示するモデルの数をインスタンス数として指定して、モデルのドローコールを呼ぶ。</li>
-<li>（ここからGPU側の処理）GPU側で送られてきたワールド行列の配列をtレジスタを介して変数に保持。</li>
-<li>頂点シェーダーに、HLSLが用意してあるSV_InstanceIDセマンティクスを指定した引数を追加し、現在処理しているインスタンス番号が分かるようにする。</li>
-<li>ワールド行列の配列からインスタンス番号で適切なワールド行列を取得し、座標変換を行う。</li>
+<p dir="auto"> インスタンシング描画の手順は以下の通りである。</p>
+<ol dir="auto">
+<li dir="auto">（ここからCPU側の処理）ワールド行列の配列の用意し、ワールド行列の配列をGPUのシェーダーリソースビューに渡す。この時、配列のはずは動的のため、定数バッファではなくストラクチャードバッファを使用する。</li>
+<li dir="auto">ワールド行列の配列を更新する。</li>
+<li dir="auto">ワールド配列の配列を使用し、ストラクチャードバッファを更新する</li>
+<li dir="auto">表示するモデルの数をインスタンス数として指定して、モデルのドローコールを呼ぶ。</li>
+<li dir="auto">（ここからGPU側の処理）GPU側で送られてきたワールド行列の配列をtレジスタを介して変数に保持。</li>
+<li dir="auto">頂点シェーダーに、HLSLが用意してあるSV_InstanceIDセマンティクスを指定した引数を追加し、現在処理しているインスタンス番号が分かるようにする。</li>
+<li dir="auto">ワールド行列の配列からインスタンス番号で適切なワールド行列を取得し、座標変換を行う。</li>
 </ol>
+<div  dir="auto" ></div>
 <!-- 目次へのリンク_ここから -->
+<div  dir="auto" ></div>
 <section class = "goToIndexText">
-<p><a href="#%E7%9B%AE%E6%AC%A1">目次へ</a></p>
+<p dir="auto"><a href="#%E7%9B%AE%E6%AC%A1">目次へ</a></p>
+<div  dir="auto" ></div>
 </section>
 <!-- 目次へのリンク_ここまで -->
+<div  dir="auto" ></div>
 <!-- ## 6.6.フラスタムカリング
 &emsp;hogehoge -->
+<div  dir="auto" ></div>
 <!-- 目次へのリンク_ここから -->
+<div  dir="auto" ></div>
 <!-- <section class = "goToIndexText">
 
 [目次へ](#目次)
 </section> -->
+<div  dir="auto" ></div>
 <!-- 目次へのリンク_ここまで -->
+<div  dir="auto" ></div>
 <!-- ## 6.7.LOD
 &emsp;hogehoge -->
+<div  dir="auto" ></div>
 <!-- 目次へのリンク_ここから -->
+<div  dir="auto" ></div>
 <!-- <section class = "goToIndexText">
 
 [目次へ](#目次)
 </section> -->
+<div  dir="auto" ></div>
 <!-- 目次へのリンク_ここまで -->
-<h2 id="63flyweight%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B3">6.3.FlyWeightパターン</h2>
-<p> 大量にあるビルや街路樹は、同じモデルやテクスチャを使用しているものが沢山ある。街路樹は全て同じモデルが使用されている。ビルのモデルは29あるが、違うモデルでも同じテクスチャを使用しているところが何か所もある。このような場合では、FlyWeightパターンを使用すれば、大幅にメモリ使用量を節約することができる。</p>
-<p>▽同じモデルを使用しているの街路樹
+<h2 dir="auto" id="63flyweight%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B3">6.3.FlyWeightパターン</h2>
+<p dir="auto"> 大量にあるビルや街路樹は、同じモデルやテクスチャを使用しているものが沢山ある。街路樹は全て同じモデルが使用されている。ビルのモデルは29あるが、違うモデルでも同じテクスチャを使用しているところが何か所もある。このような場合では、FlyWeightパターンを使用すれば、大幅にメモリ使用量を節約することができる。</p>
+<p dir="auto">▽同じモデルを使用しているの街路樹
 <br><!-- リソースバンクの説明の画像 -->
 <img src = images/ResourceBank1.jpg class = normalImage>
 <br></p>
-<p>▽同じテクスチャを使用しているビル
+<p dir="auto">▽同じテクスチャを使用しているビル
 <br><!-- リソースバンクの説明の画像 -->
 <img src = images/ResourceBank2.jpg class = normalImage>
 <br></p>
-<p>普通に読み込むと、同じモデルやテクスチャを使用していても、使用する分だけオブジェクトの生成を行うことになる。その時の使用メモリ量は、オブジェクつに   必要のメモリ量×オブジェクトの数になってしまう。<br>
+<p dir="auto">普通に読み込むと、同じモデルやテクスチャを使用していても、使用する分だけオブジェクトの生成を行うことになる。その時の使用メモリ量は、オブジェクつに   必要のメモリ量×オブジェクトの数になってしまう。<br>
 だが、FlyWightパターンを使用した場合、最初に生成するときにリソースバンクにリソースを登録する。2回目以降は、リソースバンクからリソースの参照をため   新たに生成する必要がなくなる。そのため、使用メモリ量は、オブジェクト1つに必要なメモリ量だけになる。<br>
 これにより、当初は20GB以上のメモリを使用していたステージが、約5GBのメモリ使用量で生成することが出来た。</p>
-<p>▽FlyWightパターン無しの場合
+<p dir="auto">▽FlyWightパターン無しの場合
 <br><!-- リソースバンクの説明の画 -->
 <img src = images/ResourceBank3.jpg class = normalImage>
 <br></p>
-<p>▽FlyWightパターン有りの場合
+<p dir="auto">▽FlyWightパターン有りの場合
 <br><!-- リソースバンクの説明の画 -->
 <img src = images/ResourceBank4.jpg class = normalImage>
 <br></p>
+<div  dir="auto" ></div>
 <!-- 目次へのリンク_ここから -->
+<div  dir="auto" ></div>
 <section class = "goToIndexText">
-<p><a href="#%E7%9B%AE%E6%AC%A1">目次へ</a></p>
+<p dir="auto"><a href="#%E7%9B%AE%E6%AC%A1">目次へ</a></p>
+<div  dir="auto" ></div>
 </section>
 <!-- 目次へのリンク_ここまで -->
+<div  dir="auto" ></div>
 <!-- ## 6.9.ベジェ曲線
 &emsp;hogehoge -->
+<div  dir="auto" ></div>
 <!-- 目次へのリンク_ここから -->
+<div  dir="auto" ></div>
 <!-- <section class = "goToIndexText">
 
 [目次へ](#目次)
 </section> -->
+<div  dir="auto" ></div>
 <!-- 目次へのリンク_ここまで -->
-<h2 id="64d3d12%E3%81%AE%E3%82%A8%E3%83%A9%E3%83%BC%E8%AD%A6%E5%91%8A%E3%81%AE%E5%9B%9E%E9%81%BF">6.4.D3D12のエラー、警告の回避</h2>
-<p> VisualStudioの出力ウィンドウに表示されるD3D12のエラー、警告を全て回避した。このエラーが表示されていても、ゲームは動いているため、今まで気にしていなかったが、今回はこれらのエラーを全て除去することが出来た。</p>
-<p><br><!-- D3D12の警告、エラーの画像 -->
+<h2 dir="auto" id="64d3d12%E3%81%AE%E3%82%A8%E3%83%A9%E3%83%BC%E8%AD%A6%E5%91%8A%E3%81%AE%E5%9B%9E%E9%81%BF">6.4.D3D12のエラー、警告の回避</h2>
+<p dir="auto"> VisualStudioの出力ウィンドウに表示されるD3D12のエラー、警告を全て回避した。このエラーが表示されていても、ゲームは動いているため、今まで気にしていなかったが、今回はこれらのエラーを全て除去することが出来た。</p>
+<p dir="auto"><br><!-- D3D12の警告、エラーの画像 -->
 <img src = images/d3d12Error1.jpg class = normalImage>
 <br></p>
-<p>遭遇したエラーは主に次の三種類である。</p>
-<ol>
-<li>STATE_CREATION WARNING #0: UNKNOWN</li>
-<li>EXECUTION ERROR #613: RENDER_TARGET_FORMAT_MISMATCH_PIPELINE_STATE</li>
-<li>EXECUTION ERROR #538: INVALID_SUBRESOURCE_STATE</li>
+<p dir="auto">遭遇したエラーは主に次の三種類である。</p>
+<ol dir="auto">
+<li dir="auto">STATE_CREATION WARNING #0: UNKNOWN</li>
+<li dir="auto">EXECUTION ERROR #613: RENDER_TARGET_FORMAT_MISMATCH_PIPELINE_STATE</li>
+<li dir="auto">EXECUTION ERROR #538: INVALID_SUBRESOURCE_STATE</li>
 </ol>
-<p>これらのエラーの種類、発生した場所、解決方向は以下の通りである。</p>
-<ol>
-<li><strong>STATE_CREATION WARNING #0: UNKNOWN</strong>
-<ol>
-<li>警告の種類
-<ul>
-<li>この警告はメモリリークの警告である。生成したオブジェクトを最後まで解放していないことが原因で出る警告だ。</li>
+<p dir="auto">これらのエラーの種類、発生した場所、解決方向は以下の通りである。</p>
+<ol dir="auto">
+<li dir="auto"><strong>STATE_CREATION WARNING #0: UNKNOWN</strong>
+<ol dir="auto">
+<li dir="auto">警告の種類
+<ul dir="auto">
+<li dir="auto">この警告はメモリリークの警告である。生成したオブジェクトを最後まで解放していないことが原因で出る警告だ。</li>
 </ul>
 </li>
-<li>発生した場所
-<ul>
-<li>この警告は、ゲームを終了した時に発生。</li>
-<li>出力ウィンドウには、次のように表示された。</li>
-</ul>
-</li>
-</ol>
-</li>
-</ol>
-<pre class="hljs"><code><div>D3D12 WARNING: 	Live Object at 0x000001CCE55079B0, Refcount: 0. [ STATE_CREATION WARNING #0: UNKNOWN]
-</div></code></pre>
-<ol start="3">
-<li>
-<p>解決方法</p>
-<ul>
-<li>全体検索で、オブジェクトを生成している場所を探し、きちんと破棄しているか確認し、解放するようにする。</li>
-<li>コードの一部をコメントアウトしてみて、症状が改善したか調べ、原因を特定し、解放するようにする。</li>
-<li>newでオブジェクトを生成するのではなく、スマートポインタのstd::unique_ptrを使用する。これにより、解放し忘れを防ぐ。</li>
-</ul>
-</li>
-<li>
-<p><strong>EXECUTION ERROR #613: RENDER_TARGET_FORMAT_MISMATCH_PIPELINE_STATE</strong></p>
-<ol>
-<li>エラーの種類
-<ul>
-<li>このエラーは、レンダリングターゲットを生成するときに指定したカラーフォーマットと、そのレンダリングターゲットに描画するオブジェクトのカラーフォーマットが違っている、というエラーだ。</li>
-</ul>
-</li>
-<li>発生した場所
-<ul>
-<li>G-Bufferにモデルを描画するときに発生。</li>
-<li>エフェクト、スプライトを描画するときに発生。</li>
-<li>出力ウィンドウには、次のように表示された。</li>
+<li dir="auto">発生した場所
+<ul dir="auto">
+<li dir="auto">この警告は、ゲームを終了した時に発生。</li>
+<li dir="auto">出力ウィンドウには、次のように表示された。</li>
 </ul>
 </li>
 </ol>
 </li>
 </ol>
-<pre class="hljs"><code><div>D3D12 ERROR: ID3D12CommandList::DrawIndexedInstanced: The render target format in slot 0 does not match that specified by the current pipeline state. (pipeline state = R16G16B16A16_FLOAT, RTV ID3D12Resource* = 0x000001CC784F0360:'Unnamed ID3D12Resource Object') [ EXECUTION ERROR #613: RENDER_TARGET_FORMAT_MISMATCH_PIPELINE_STATE]
+<pre><code dir="auto"><code><div>D3D12 WARNING: 	Live Object at 0x000001CCE55079B0, Refcount: 0. [ STATE_CREATION WARNING #0: UNKNOWN]
+</div></code></code></pre>
+<ol start="3" dir="auto">
+<li dir="auto">
+<p dir="auto">解決方法</p>
+<ul dir="auto">
+<li dir="auto">全体検索で、オブジェクトを生成している場所を探し、きちんと破棄しているか確認し、解放するようにする。</li>
+<li dir="auto">コードの一部をコメントアウトしてみて、症状が改善したか調べ、原因を特定し、解放するようにする。</li>
+<li dir="auto">newでオブジェクトを生成するのではなく、スマートポインタのstd::unique_ptrを使用する。これにより、解放し忘れを防ぐ。</li>
+</ul>
+</li>
+<li dir="auto">
+<p dir="auto"><strong>EXECUTION ERROR #613: RENDER_TARGET_FORMAT_MISMATCH_PIPELINE_STATE</strong></p>
+<ol dir="auto">
+<li dir="auto">エラーの種類
+<ul dir="auto">
+<li dir="auto">このエラーは、レンダリングターゲットを生成するときに指定したカラーフォーマットと、そのレンダリングターゲットに描画するオブジェクトのカラーフォーマットが違っている、というエラーだ。</li>
+</ul>
+</li>
+<li dir="auto">発生した場所
+<ul dir="auto">
+<li dir="auto">G-Bufferにモデルを描画するときに発生。</li>
+<li dir="auto">エフェクト、スプライトを描画するときに発生。</li>
+<li dir="auto">出力ウィンドウには、次のように表示された。</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+<pre><code dir="auto"><code><div>D3D12 ERROR: ID3D12CommandList::DrawIndexedInstanced: The render target format in slot 0 does not match that specified by the current pipeline state. (pipeline state = R16G16B16A16_FLOAT, RTV ID3D12Resource* = 0x000001CC784F0360:'Unnamed ID3D12Resource Object') [ EXECUTION ERROR #613: RENDER_TARGET_FORMAT_MISMATCH_PIPELINE_STATE]
 
-</div></code></pre>
-<ol start="3">
-<li>
-<p>解決方法</p>
-<ul>
-<li>G-Bufferにマルチレンダリングターゲットを利用してモデルを描画するとき、モデルに1つしかカラーフォーマットし指定していなかった。モデルに複数のカラーフォーマットを指定できるようにし、G-Bufferのカラーフォーマットと合わせることで解決した。</li>
-<li>エフェクトとスプライトは学校内製の簡易エンジンで最初から表示されていたため、カラーフォーマットを合わせることを見落としていた。指定している場所を調べ、修正した。</li>
+</div></code></code></pre>
+<ol start="3" dir="auto">
+<li dir="auto">
+<p dir="auto">解決方法</p>
+<ul dir="auto">
+<li dir="auto">G-Bufferにマルチレンダリングターゲットを利用してモデルを描画するとき、モデルに1つしかカラーフォーマットし指定していなかった。モデルに複数のカラーフォーマットを指定できるようにし、G-Bufferのカラーフォーマットと合わせることで解決した。</li>
+<li dir="auto">エフェクトとスプライトは学校内製の簡易エンジンで最初から表示されていたため、カラーフォーマットを合わせることを見落としていた。指定している場所を調べ、修正した。</li>
 </ul>
 </li>
-<li>
-<p><strong>EXECUTION ERROR #538: INVALID_SUBRESOURCE_STATE</strong></p>
-<ol>
-<li>エラーの種類
-<ul>
-<li>これはレンダリングターゲットのサブリソースが不正、というエラーだ。</li>
+<li dir="auto">
+<p dir="auto"><strong>EXECUTION ERROR #538: INVALID_SUBRESOURCE_STATE</strong></p>
+<ol dir="auto">
+<li dir="auto">エラーの種類
+<ul dir="auto">
+<li dir="auto">これはレンダリングターゲットのサブリソースが不正、というエラーだ。</li>
 </ul>
 </li>
-<li>発生した場所
-<ul>
-<li>ポストエフェクトをかけたあと、スプライトを描画使用としたときに発生。</li>
-<li>出力ウィンドウには、次のように表示された。</li>
-</ul>
-</li>
-</ol>
-</li>
-</ol>
-<pre class="hljs"><code><div>D3D12 ERROR: ID3D12CommandList::DrawIndexedInstanced: Resource state (0x0: D3D12_RESOURCE_STATE_[COMMON|PRESENT]) of resource (0x000001CC784F0360:'Unnamed ID3D12Resource Object') (subresource: 0) is invalid for use as a render target.  Expected State Bits (all): 0x4: D3D12_RESOURCE_STATE_RENDER_TARGET, Actual State: 0x0: D3D12_RESOURCE_STATE_[COMMON|PRESENT], Missing State: 0x4: D3D12_RESOURCE_STATE_RENDER_TARGET. [ EXECUTION ERROR #538: INVALID_SUBRESOURCE_STATE]
-</div></code></pre>
-<ol start="3">
-<li>解決方法
-<ul>
-<li>レンダリングの処理を一部ずつコメントアウトしていき、改善していないか調べて、原因がポストエフェクト後のスプライト描画する時だと判明。</li>
-<li>ポストエフェクトを実行した後スプライトを描画する際、レンダリングターゲットが使用可能になるまで待つ処理を入れ忘れていたため、修正。</li>
+<li dir="auto">発生した場所
+<ul dir="auto">
+<li dir="auto">ポストエフェクトをかけたあと、スプライトを描画使用としたときに発生。</li>
+<li dir="auto">出力ウィンドウには、次のように表示された。</li>
 </ul>
 </li>
 </ol>
+</li>
+</ol>
+<pre><code dir="auto"><code><div>D3D12 ERROR: ID3D12CommandList::DrawIndexedInstanced: Resource state (0x0: D3D12_RESOURCE_STATE_[COMMON|PRESENT]) of resource (0x000001CC784F0360:'Unnamed ID3D12Resource Object') (subresource: 0) is invalid for use as a render target.  Expected State Bits (all): 0x4: D3D12_RESOURCE_STATE_RENDER_TARGET, Actual State: 0x0: D3D12_RESOURCE_STATE_[COMMON|PRESENT], Missing State: 0x4: D3D12_RESOURCE_STATE_RENDER_TARGET. [ EXECUTION ERROR #538: INVALID_SUBRESOURCE_STATE]
+</div></code></code></pre>
+<ol start="3" dir="auto">
+<li dir="auto">解決方法
+<ul dir="auto">
+<li dir="auto">レンダリングの処理を一部ずつコメントアウトしていき、改善していないか調べて、原因がポストエフェクト後のスプライト描画する時だと判明。</li>
+<li dir="auto">ポストエフェクトを実行した後スプライトを描画する際、レンダリングターゲットが使用可能になるまで待つ処理を入れ忘れていたため、修正。</li>
+</ul>
+</li>
+</ol>
+<div  dir="auto" ></div>
 <!-- 目次へのリンク_ここから -->
+<div  dir="auto" ></div>
 <section class = "goToIndexText">
-<p><a href="#%E7%9B%AE%E6%AC%A1">目次へ</a></p>
+<p dir="auto"><a href="#%E7%9B%AE%E6%AC%A1">目次へ</a></p>
+<div  dir="auto" ></div>
 </section>
 <!-- 目次へのリンク_ここまで -->
-<hr>
-<h1 id="7%E3%82%B2%E3%83%BC%E3%83%A0%E7%9A%84%E3%81%AB%E3%81%93%E3%81%A0%E3%82%8F%E3%81%A3%E3%81%9F%E3%81%A8%E3%81%93%E3%82%8D">7.ゲーム的にこだわったところ</h1>
-<h2 id="71%E3%82%B9%E3%82%A4%E3%83%B3%E3%82%B0%E3%81%AB%E7%88%BD%E5%BF%AB%E6%84%9F%E3%82%92%E5%87%BA%E3%81%99%E3%81%9F%E3%82%81%E3%81%AE%E5%B7%A5%E5%A4%AB">7.1.スイングに爽快感を出すための工夫</h2>
-<p> スイングの爽快感を出すために、スイングで速く移動できるようにしたが、速すぎてとても操作が難しくなってしまった。そのため、速度はそのままで速く動いているように見せるために、バネカメラの減衰率をスイング中に動的に調整した。スイング中は減衰率を上げて、カメラがより遅れてくるようにする。これによりプレイヤーが加速して動いたかのように見える。</p>
+<hr dir="auto">
+<h1 dir="auto" id="7%E3%82%B2%E3%83%BC%E3%83%A0%E7%9A%84%E3%81%AB%E3%81%93%E3%81%A0%E3%82%8F%E3%81%A3%E3%81%9F%E3%81%A8%E3%81%93%E3%82%8D">7.ゲーム的にこだわったところ</h1>
+<h2 dir="auto" id="71%E3%82%B9%E3%82%A4%E3%83%B3%E3%82%B0%E3%81%AB%E7%88%BD%E5%BF%AB%E6%84%9F%E3%82%92%E5%87%BA%E3%81%99%E3%81%9F%E3%82%81%E3%81%AE%E5%B7%A5%E5%A4%AB">7.1.スイングに爽快感を出すための工夫</h2>
+<p dir="auto"> スイングの爽快感を出すために、スイングで速く移動できるようにしたが、速すぎてとても操作が難しくなってしまった。そのため、速度はそのままで速く動いているように見せるために、バネカメラの減衰率をスイング中に動的に調整した。スイング中は減衰率を上げて、カメラがより遅れてくるようにする。これによりプレイヤーが加速して動いたかのように見える。</p>
+<div  dir="auto" ></div>
 <!-- 目次へのリンク_ここから -->
+<div  dir="auto" ></div>
 <section class = "goToIndexText">
-<p><a href="#%E7%9B%AE%E6%AC%A1">目次へ</a></p>
+<p dir="auto"><a href="#%E7%9B%AE%E6%AC%A1">目次へ</a></p>
+<div  dir="auto" ></div>
 </section>
 <!-- 目次へのリンク_ここまで -->
-<h2 id="72ibl%E3%81%AE%E5%BD%B1%E9%9F%BF%E5%BA%A6%E3%82%92%E6%9B%B8%E3%81%84%E3%81%9F%E3%83%86%E3%82%AF%E3%82%B9%E3%83%81%E3%83%A3%E3%81%AE%E4%BD%BF%E7%94%A8">7.2.IBLの影響度を書いたテクスチャの使用</h2>
-<p> IBLを利用して、モデルに空を反射させている。この時IBLの影響度をモデルに貼られているテクスチャから決めている。これにより、ビルに空を反射させるとき、壁はそこそこ反射、窓にはくっきりと反射させることができる。</p>
-<p>▽IBLの影響度の設定のない空の反射
+<h2 dir="auto" id="72ibl%E3%81%AE%E5%BD%B1%E9%9F%BF%E5%BA%A6%E3%82%92%E6%9B%B8%E3%81%84%E3%81%9F%E3%83%86%E3%82%AF%E3%82%B9%E3%83%81%E3%83%A3%E3%81%AE%E4%BD%BF%E7%94%A8">7.2.IBLの影響度を書いたテクスチャの使用</h2>
+<p dir="auto"> IBLを利用して、モデルに空を反射させている。この時IBLの影響度をモデルに貼られているテクスチャから決めている。これにより、ビルに空を反射させるとき、壁はそこそこ反射、窓にはくっきりと反射させることができる。</p>
+<p dir="auto">▽IBLの影響度の設定のない空の反射
 <br><!-- IBLの影響度の画像 -->
 <img src = images/iblLevel1.jpg class = normalImage>
 <br></p>
-<p>▽IBLの影響度の設定がある空の反射
+<p dir="auto">▽IBLの影響度の設定がある空の反射
 <br><!-- IBLの影響度の画像 -->
 <img src = images/iblLevel2.jpg class = normalImage>
 <br></p>
-<p>▽ビルの窓に貼っているテクスチャ。rgbaの内、gの値がIBLの影響度
+<p dir="auto">▽ビルの窓に貼っているテクスチャ。rgbaの内、gの値がIBLの影響度
 <br><!-- IBLの影響度の画像 -->
 <img src = images/iblLevel3.jpg class = miniImage>
 <br></p>
+<div  dir="auto" ></div>
 <!-- 目次へのリンク_ここから -->
+<div  dir="auto" ></div>
 <section class = "goToIndexText">
-<p><a href="#%E7%9B%AE%E6%AC%A1">目次へ</a></p>
+<p dir="auto"><a href="#%E7%9B%AE%E6%AC%A1">目次へ</a></p>
+<div  dir="auto" ></div>
 </section>
 <!-- 目次へのリンク_ここまで -->
-<h2 id="73%E5%85%A5%E5%8A%9B%E6%83%85%E5%A0%B1%E3%81%AE%E3%82%BB%E3%83%BC%E3%83%96%E3%81%A8%E3%83%AD%E3%83%BC%E3%83%89%E3%81%AB%E3%82%88%E3%82%8B%E6%BC%94%E5%87%BA">7.3.入力情報のセーブとロードによる演出</h2>
-<p> タイトルシーンでプレイヤーがスイングで遠くに飛んでいく演出がある。これは、入力情報のセーブとロードに依って実現した。入力情報は、コントローラーの入力情報とそのフレームのデルタタイムを毎フレーム収集している。</p>
-<ol>
-<li>タイトル画面で、自分でプレイヤーを動かす。その時の入力情報を保存する。</li>
-<li>保存した入力情報を読み込んで、プレイヤーに渡して再生する。</li>
+<h2 dir="auto" id="73%E5%85%A5%E5%8A%9B%E6%83%85%E5%A0%B1%E3%81%AE%E3%82%BB%E3%83%BC%E3%83%96%E3%81%A8%E3%83%AD%E3%83%BC%E3%83%89%E3%81%AB%E3%82%88%E3%82%8B%E6%BC%94%E5%87%BA">7.3.入力情報のセーブとロードによる演出</h2>
+<p dir="auto"> タイトルシーンでプレイヤーがスイングで遠くに飛んでいく演出がある。これは、入力情報のセーブとロードに依って実現した。入力情報は、コントローラーの入力情報とそのフレームのデルタタイムを毎フレーム収集している。</p>
+<ol dir="auto">
+<li dir="auto">タイトル画面で、自分でプレイヤーを動かす。その時の入力情報を保存する。</li>
+<li dir="auto">保存した入力情報を読み込んで、プレイヤーに渡して再生する。</li>
 </ol>
+<div  dir="auto" ></div>
 <!-- 目次へのリンク_ここから -->
+<div  dir="auto" ></div>
 <section class = "goToIndexText">
-<p><a href="#%E7%9B%AE%E6%AC%A1">目次へ</a></p>
+<p dir="auto"><a href="#%E7%9B%AE%E6%AC%A1">目次へ</a></p>
+<div  dir="auto" ></div>
 </section>
 <!-- 目次へのリンク_ここまで -->
+<div  dir="auto" ></div>
 <!-- ## 7.4.ミニマップや敵探知のUI実装 -->
+<div  dir="auto" ></div>
 <!-- 目次へのリンク_ここから -->
+<div  dir="auto" ></div>
 <!-- <section class = "goToIndexText">
 
 [目次へ](#目次)
 </section> -->
+<div  dir="auto" ></div>
 <!-- 目次へのリンク_ここまで -->
+<div  dir="auto" ></div>
 <!-- ## 7.5.QTEの演出 -->
+<div  dir="auto" ></div>
 <!-- 目次へのリンク_ここから -->
+<div  dir="auto" ></div>
 <!-- <section class = "goToIndexText">
 
 [目次へ](#目次)
 </section> -->
+<div  dir="auto" ></div>
 <!-- 目次へのリンク_ここまで -->
-<h2 id="74vroid%E3%81%8B%E3%82%89%E8%87%AA%E4%BD%9C%E3%82%B2%E3%83%BC%E3%83%A0%E3%81%A7%E8%A1%A8%E7%A4%BA%E3%81%A7%E3%81%8D%E3%82%8B%E3%83%A2%E3%83%87%E3%83%AB%E3%83%87%E3%83%BC%E3%82%BF%E3%81%B8%E3%81%AE%E5%A4%89%E6%8F%9B">7.4.VRoidから自作ゲームで表示できるモデルデータへの変換</h2>
-<p> このゲームのプレイヤーのモデルには、VRoidというキャラクターモデリングソフトを使用して自作したモデルを使用している。だが、このVRoidはモデルのエクスポートがvrmファイルという独自の形式しかサポートしていない。このゲームではtkmという学内エンジン用のフォーマットのモデルを使用している。このモデルに変換するために3ds Maxという3DCGソフトに取り込む必要がある。</p>
-<ol>
-<li>UniVRMパッケージを使いVroidからUnityへ（テクスチャのカラーが変）</li>
-<li>Windows10標準搭載の3D Builderを使いobjに変換（UVが変）</li>
+<h2 dir="auto" id="74vroid%E3%81%8B%E3%82%89%E8%87%AA%E4%BD%9C%E3%82%B2%E3%83%BC%E3%83%A0%E3%81%A7%E8%A1%A8%E7%A4%BA%E3%81%A7%E3%81%8D%E3%82%8B%E3%83%A2%E3%83%87%E3%83%AB%E3%83%87%E3%83%BC%E3%82%BF%E3%81%B8%E3%81%AE%E5%A4%89%E6%8F%9B">7.4.VRoidから自作ゲームで表示できるモデルデータへの変換</h2>
+<p dir="auto"> このゲームのプレイヤーのモデルには、VRoidというキャラクターモデリングソフトを使用して自作したモデルを使用している。だが、このVRoidはモデルのエクスポートがvrmファイルという独自の形式しかサポートしていない。このゲームではtkmという学内エンジン用のフォーマットのモデルを使用している。このモデルに変換するために3ds Maxという3DCGソフトに取り込む必要がある。</p>
+<ol dir="auto">
+<li dir="auto">UniVRMパッケージを使いVroidからUnityへ（テクスチャのカラーが変）</li>
+<li dir="auto">Windows10標準搭載の3D Builderを使いobjに変換（UVが変）</li>
 </ol>
+<div  dir="auto" ></div>
 <!-- 目次へのリンク_ここから -->
+<div  dir="auto" ></div>
 <section class = "goToIndexText">
-<p><a href="#%E7%9B%AE%E6%AC%A1">目次へ</a></p>
+<p dir="auto"><a href="#%E7%9B%AE%E6%AC%A1">目次へ</a></p>
+<div  dir="auto" ></div>
 </section>
 <!-- 目次へのリンク_ここまで -->
+<div  dir="auto" ></div>
 <!-- # 9.今後の課題
 
 ## 9.1.スイング中のカーブがしずらい
@@ -1363,11 +1099,14 @@ $</p>
 ## 9.7.スイング以外の移動アクションを増やす
 
 ## 9.8.ドローンなどの空中の敵 -->
+<div  dir="auto" ></div>
 <!-- 目次へのリンク_ここから -->
+<div  dir="auto" ></div>
 <!-- <section class = "goToIndexText">
 
 [目次へ](#目次)
 </section> -->
+<div  dir="auto" ></div>
 <!-- 目次へのリンク_ここまで -->
 
 </body>
