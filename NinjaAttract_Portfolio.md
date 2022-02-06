@@ -1,5 +1,7 @@
 <link href="stylesheet.css" rel="stylesheet"></link>
 
+<a href = "https://yonema.github.io/Portfolio_HomePage/" target="_blank" >ホームページへ</a>
+
 # **「Ninja Attract」ポートフォリオ**<!-- omit in toc -->
 ## 河原電子ビジネス専門学校　ゲームクリエイター科2年
 ## 氏名：米地 真央
@@ -27,6 +29,7 @@
   - [7.2.IBLの影響度を書いたテクスチャの使用](#72iblの影響度を書いたテクスチャの使用)
   - [7.3.入力情報のセーブとロードによる演出](#73入力情報のセーブとロードによる演出)
   - [7.4.VRoidから自作ゲームで表示できるモデルデータへの変換](#74vroidから自作ゲームで表示できるモデルデータへの変換)
+- [リンク](#リンク)
 
 # 1.作品概要
 
@@ -832,6 +835,12 @@ D3D12 ERROR: ID3D12CommandList::DrawIndexedInstanced: Resource state (0x0: D3D12
 </section> -->
 <!-- 目次へのリンク_ここまで -->
 
+# リンク
+
+* <a href = "https://yonema.github.io/Portfolio_HomePage/" target="_blank" >ホームページへ</a>
+* <a href = "https://twitter.com/MaoYoneji" target="_blank">Twitter</a>
+* <a href = "https://www.youtube.com/channel/UC03BQEviN9mx7Y-QmyndPuw" target="_blank">YouTube</a>
+* <a href = "https://github.com/yonema" target="_blank">GitHub</a>
 
 
 
