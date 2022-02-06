@@ -1,6 +1,6 @@
 <link href="stylesheet.css" rel="stylesheet"></link>
 
-<a href = "https://yonema.github.io/Portfolio_HomePage/" target="_blank" >ホームページへ</a>
+<a href = "https://yonema.github.io/Portfolio_HomePage/">ホームページへ</a>
 
 # **「Ninja Attract」ポートフォリオ**<!-- omit in toc -->
 ## 河原電子ビジネス専門学校　ゲームクリエイター科2年
@@ -837,7 +837,7 @@ D3D12 ERROR: ID3D12CommandList::DrawIndexedInstanced: Resource state (0x0: D3D12
 
 # リンク
 
-* <a href = "https://yonema.github.io/Portfolio_HomePage/" target="_blank" >ホームページへ</a>
+* <a href = "https://yonema.github.io/Portfolio_HomePage/" target="_blank" >ホームページ</a>
 * <a href = "https://twitter.com/MaoYoneji" target="_blank">Twitter</a>
 * <a href = "https://www.youtube.com/channel/UC03BQEviN9mx7Y-QmyndPuw" target="_blank">YouTube</a>
 * <a href = "https://github.com/yonema" target="_blank">GitHub</a>
