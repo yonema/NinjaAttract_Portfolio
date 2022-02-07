@@ -31,6 +31,10 @@
   - [7.4.VRoidから自作ゲームで表示できるモデルデータへの変換](#74vroidから自作ゲームで表示できるモデルデータへの変換)
 - [リンク](#リンク)
 
+<section class = googleSlide>
+<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vRyXdtLrCXvlrrA4qhkaMxzB2t80S6407dF6-GJ39NUd3jHzqCR5rdmg7iXdwDyAV8OmsGPS4fcEssx/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+</section>
+
 # 1.作品概要
 
 * タイトル
